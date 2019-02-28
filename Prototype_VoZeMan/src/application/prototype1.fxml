@@ -32,7 +32,7 @@
                   <Insets left="15.0" />
                </padding>
             </Label>
-            <TabPane prefHeight="41.0" prefWidth="1600.0" tabClosingPolicy="UNAVAILABLE">
+            <TabPane prefHeight="49.0" prefWidth="1600.0" tabClosingPolicy="UNAVAILABLE">
               <tabs>
                 <Tab text="RAPLA">
                   <content>
