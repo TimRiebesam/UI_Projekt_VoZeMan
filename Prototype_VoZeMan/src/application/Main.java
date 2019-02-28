@@ -11,7 +11,8 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("main-view.fxml"));
+			//Hier anpassen um anderen Prototype zu testen!!!
+			Parent root = FXMLLoader.load(getClass().getResource("prototype2.fxml"));
 
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
