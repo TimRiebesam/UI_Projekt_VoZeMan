@@ -2,9 +2,8 @@ package application.Controller;
 
 import java.util.ArrayList;
 
-import application.Model.MenuModel;
-import application.Model.NotesList;
-import application.Model.NotesModel;
+import application.Model.Service.MenuService;
+import application.Model.Service.NotesService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -77,8 +76,6 @@ public class Controller {
     
     @FXML
     private TextField notesTitleTextField;
-    
-    private NotesList notes = new NotesList();
 
     @FXML
     private Label lastSavedNotesLabel;
@@ -92,9 +89,9 @@ public class Controller {
     @FXML
     private Button showNote;
     
-    MenuModel menuModel = new MenuModel();
+    MenuService menuModel = new MenuService();
     
-    NotesModel notesModel = new NotesModel();
+    NotesService notesModel = new NotesService();
     
     private void checkMenuBtnList() {
     	if(menuButtons.size() == 0) {
@@ -132,7 +129,7 @@ public class Controller {
     
     @FXML
     void addNote(ActionEvent event) {
-    	notesModel.addNote(notesTitleTextField, notesTextArea, notes, notesListview);
+    	notesModel.addNote(notesTitleTextField, notesTextArea, notesListview);
     }
     
     @FXML

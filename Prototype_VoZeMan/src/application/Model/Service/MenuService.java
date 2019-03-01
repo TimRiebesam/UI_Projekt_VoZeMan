@@ -1,10 +1,10 @@
-package application.Model;
+package application.Model.Service;
 
 import java.util.ArrayList;
 
 import javafx.scene.control.Button;
 
-public class MenuModel {
+public class MenuService {
 	
 	public void changeMenu(ArrayList<Button> menuButtons, Button target, ArrayList<Button> menuSecondaryButtons, Button targetSecondary) {
 		menuButtons.forEach(btn -> {
