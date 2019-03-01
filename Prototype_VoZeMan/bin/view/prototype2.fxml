@@ -18,7 +18,7 @@
    <children>
       <VBox prefHeight="700.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label fx:id="pageTitle" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="1000.0" styleClass="head" text="Information about current Page" textFill="WHITE">
+            <Label fx:id="pageTitle" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="35.0" prefWidth="1000.0" styleClass="head" text="Information about current Page" textFill="WHITE">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -26,7 +26,7 @@
                   <Insets bottom="5.0" />
                </padding>
             </Label>
-            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="1000.0" styleClass="head">
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="36.0" prefWidth="1000.0" styleClass="head">
                <children>
                   <Button fx:id="menuRapla" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeMenu" prefHeight="35.0" prefWidth="166.0" styleClass="btn-menu-not-active" text="RAPLA" textFill="WHITE">
                      <HBox.margin>
@@ -43,7 +43,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="1000.0" styleClass="secondary-menu">
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="30.0" prefWidth="1000.0" styleClass="secondary-menu">
                <children>
                   <Button fx:id="menuSecondaryBtnOne" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeSecondaryMenu" prefHeight="35.0" prefWidth="166.0" styleClass="btn-secondary-edge-active" text="more" />
                   <Button fx:id="menuSecondaryBtnTwo" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeSecondaryMenu" prefHeight="35.0" prefWidth="166.0" styleClass="btn-secondary-edge" text="menu" />
@@ -56,50 +56,47 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </HBox>
-            <Separator opacity="0.3" prefWidth="1000.0" />
-            <HBox alignment="CENTER" prefHeight="600.0" prefWidth="1000.0" />
+            <Separator maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.3" prefWidth="1000.0" />
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" />
          </children>
       </VBox>
-      <Pane fx:id="mainPane" minHeight="600.0" minWidth="700.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="105.0">
+      <Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="110.0">
          <children>
-            <Label fx:id="mainWindowLabel" alignment="CENTER" prefHeight="600.0" prefWidth="700.0" text="Main Window" textFill="#2a2f33">
+            <Label fx:id="mainWindowLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0" style="-fx-background-color: #666666;" text="Main Window" textFill="#2a2f33">
                <font>
                   <Font size="67.0" />
                </font>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
             </Label>
          </children>
       </Pane>
-      <Pane fx:id="quickNotesPane" minHeight="600.0" minWidth="300.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="105.0">
+      <Pane fx:id="quickNotesPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="280.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="110.0">
          <children>
-            <VBox fx:id="btnSaveNotes" alignment="TOP_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="630.0" prefWidth="300.0">
+            <VBox fx:id="btnSaveNotes" alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="280.0">
                <children>
-                  <Label fx:id="quickNotesLabel" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="300.0" text="Quick Notes" textFill="#2a2f33">
+                  <Label fx:id="quickNotesLabel" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="280.0" text="Quick Notes" textFill="#2a2f33">
                      <font>
                         <Font size="14.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="10.0" />
+                        <Insets />
                      </VBox.margin>
                   </Label>
-                  <TextField fx:id="notesTitleTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="300.0" promptText="Titel">
+                  <TextField fx:id="notesTitleTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="280.0" promptText="Titel">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </TextField>
-                  <TextArea fx:id="notesTextArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="300.0" promptText="Notiz">
+                  <TextArea fx:id="notesTextArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="280.0" promptText="Notiz">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
                   </TextArea>
-                  <Button fx:id="saveNote" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNote" prefHeight="30.0" prefWidth="300.0" styleClass="btn-primary" text="Notiz speichern" textFill="#e8e8e3">
+                  <Button fx:id="saveNote" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNote" prefHeight="30.0" prefWidth="280.0" styleClass="btn-primary" text="Notiz speichern" textFill="#e8e8e3">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Label fx:id="lastSavedNotesLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" text="Zuletzt gespeicherte Notizen" textFill="#2a2f33">
+                  <Label fx:id="lastSavedNotesLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="280.0" text="Zuletzt gespeicherte Notizen" textFill="#2a2f33">
                      <VBox.margin>
                         <Insets top="15.0" />
                      </VBox.margin>
@@ -107,20 +104,17 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <ListView fx:id="notesListview" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="300.0">
+                  <ListView fx:id="notesListview" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="280.0">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </ListView>
-                  <Button fx:id="showNote" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showNote" prefHeight="30.0" prefWidth="300.0" styleClass="btn-primary" text="Notiz ansehen" textFill="#e8e8e3">
+                  <Button fx:id="showNote" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showNote" prefHeight="30.0" prefWidth="280.0" styleClass="btn-primary" text="Notiz ansehen" textFill="#e8e8e3">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Button>
                </children>
-               <padding>
-                  <Insets left="10.0" right="10.0" />
-               </padding>
             </VBox>
          </children>
       </Pane>

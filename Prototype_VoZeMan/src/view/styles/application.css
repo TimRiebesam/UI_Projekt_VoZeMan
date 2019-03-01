@@ -9,13 +9,12 @@
 }
 
 .secondary-menu {
-	-fx-background-color: #cbcbc7;
+	-fx-background-color: #8e1016;
 }
 
 .btn-menu-active {
-	-fx-background-color: #cbcbc7;
+	-fx-background-color: #8e1016;
 	-fx-background-radius: 3 3 0 0;
-	-fx-text-fill: #000000;
 }
 
 .btn-menu-not-active {
@@ -25,8 +24,7 @@
 }
 
 .btn-menu-not-active:hover {
-	-fx-background-color: #8e1016;
-	-fx-background-radius: 3 3 0 0;
+	-fx-font-weight: bold;
 }
 
 .btn-primary {
@@ -35,8 +33,8 @@
 }
 
 .btn-secondary {
-	-fx-background-color: #cbcbc7;
-	-fx-text-fill: #000000;
+	-fx-background-color: #8e1016;
+	-fx-text-fill: #ffffff;
 }
 
 .btn-primary-edge {
@@ -46,15 +44,13 @@
 }
 
 .btn-secondary-edge {
-	-fx-background-color: #cbcbc7;
+	-fx-background-color: #8e1016;
 	-fx-background-radius: 0;
-	-fx-text-fill: #000000;
+	-fx-text-fill: #ffffff;
 }
 
 .btn-secondary-edge:hover {
-	-fx-background-color: #cbcbc7;
-	-fx-background-radius: 0;
-	-fx-text-fill: #000000;
+	-fx-font-weight: bold;
 }
 
 .btn-white {
@@ -69,14 +65,14 @@
 }
 
 .btn-secondary-active {
-	-fx-background-color: #cbcbc7;
-	-fx-text-fill: #000000;
+	-fx-background-color: #8e1016;
+	-fx-text-fill: #ffffff;
 	-fx-font-weight: bold;
 }
 
 .btn-secondary-edge-active {
-	-fx-background-color: #cbcbc7;
+	-fx-background-color: #8e1016;
 	-fx-background-radius: 0;
-	-fx-text-fill: #000000;
+	-fx-text-fill: #ffffff;
 	-fx-font-weight: bold;
 }

@@ -22,6 +22,8 @@ public class Main extends Application {
 			
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("VoZeMan - DHBW Karlsruhe");
+			primaryStage.setMinHeight(460);
+			primaryStage.setMinWidth(650);
 			primaryStage.show();
 			
 			Controller controller = (Controller)loader.getController();
