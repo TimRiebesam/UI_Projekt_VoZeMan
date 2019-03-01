@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane style="-fx-background-color: #ffffff;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller.Controller">
+<AnchorPane style="-fx-background-color: #ffffff;" stylesheets="@styles/application.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller.Controller">
    <children>
       <VBox prefHeight="700.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -72,11 +72,11 @@
             </Label>
          </children>
       </Pane>
-      <Pane minHeight="600.0" minWidth="300.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="105.0">
+      <Pane fx:id="quickNotesPane" minHeight="600.0" minWidth="300.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="105.0">
          <children>
             <VBox fx:id="btnSaveNotes" alignment="TOP_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="630.0" prefWidth="300.0">
                <children>
-                  <Label fx:id="quickNotesLabel" alignment="TOP_LEFT" prefHeight="25.0" prefWidth="300.0" text="Quick Notes" textFill="#2a2f33">
+                  <Label fx:id="quickNotesLabel" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="300.0" text="Quick Notes" textFill="#2a2f33">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -84,22 +84,22 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField fx:id="notesTitleTextField" prefHeight="25.0" promptText="Titel">
+                  <TextField fx:id="notesTitleTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="300.0" promptText="Titel">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </TextField>
-                  <TextArea fx:id="notesTextArea" prefHeight="200.0" prefWidth="300.0" promptText="Notiz">
+                  <TextArea fx:id="notesTextArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="300.0" promptText="Notiz">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
                   </TextArea>
-                  <Button fx:id="saveNote" mnemonicParsing="false" onAction="#addNote" prefHeight="30.0" prefWidth="300.0" styleClass="btn-primary" text="Notiz speichern" textFill="#e8e8e3">
+                  <Button fx:id="saveNote" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNote" prefHeight="30.0" prefWidth="300.0" styleClass="btn-primary" text="Notiz speichern" textFill="#e8e8e3">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Label fx:id="lastSavedNotesLabel" prefHeight="30.0" prefWidth="300.0" text="Zuletzt gespeicherte Notizen" textFill="#2a2f33">
+                  <Label fx:id="lastSavedNotesLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" text="Zuletzt gespeicherte Notizen" textFill="#2a2f33">
                      <VBox.margin>
                         <Insets top="15.0" />
                      </VBox.margin>
@@ -107,12 +107,12 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <ListView fx:id="notesListview" prefHeight="190.0" prefWidth="200.0">
+                  <ListView fx:id="notesListview" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="300.0">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </ListView>
-                  <Button fx:id="showNote" mnemonicParsing="false" onAction="#showNote" prefHeight="30.0" prefWidth="300.0" styleClass="btn-primary" text="Notiz ansehen" textFill="#e8e8e3">
+                  <Button fx:id="showNote" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showNote" prefHeight="30.0" prefWidth="300.0" styleClass="btn-primary" text="Notiz ansehen" textFill="#e8e8e3">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
