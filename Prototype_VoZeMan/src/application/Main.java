@@ -1,6 +1,7 @@
 package application;
 	
 import application.Controller.Controller;
+import application.Model.Service.HandleServicesService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -22,12 +23,16 @@ public class Main extends Application {
 			
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("VoZeMan - DHBW Karlsruhe");
-			primaryStage.setMinHeight(460);
+			primaryStage.setMinHeight(480);
 			primaryStage.setMinWidth(650);
 			primaryStage.show();
 			
+			HandleServicesService.getExamlpeDataService().addExampleDataToApplication();
+			
 			Controller controller = (Controller)loader.getController();
 			controller.setPrimaryStage(primaryStage);
+			controller.calculateHeightsForResizing();
+			controller.loadStartPage();
 		
 			primaryStage.widthProperty().addListener(controller.getStageSizeListener());
 			primaryStage.heightProperty().addListener(controller.getStageSizeListener());

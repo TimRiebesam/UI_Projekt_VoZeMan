@@ -1,5 +1,7 @@
 package application.Model;
 
+import java.text.SimpleDateFormat;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -17,6 +19,22 @@ public class NotesList {
 			noteTitles.add(note.getTitle());
 		});
 		return noteTitles;
+	}
+	
+	public ObservableList<String> getNoteTitlesWithTimestamp() {
+		ObservableList<String> noteTitles = FXCollections.observableArrayList();
+		notes.forEach(note -> {
+			noteTitles.add(new SimpleDateFormat("dd.MM.yyyy - HH:mm").format(note.getTimestamp()) + "\n" + note.getTitle());
+		});
+		return noteTitles;
+	}
+	
+	public Note getNoteByIndex(int value) {
+		return notes.get(value);
+	}
+	
+	public int size() {
+		return notes.size();
 	}
 	
 }

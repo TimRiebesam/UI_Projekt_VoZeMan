@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 public class StageResizeService {
 	
-	public void ResizeStage(Stage primaryStage, Pane mainPane, Pane quickNotesPane, Number oldValue, String direction) {
+	public void ResizeStage(Stage primaryStage, Pane mainPane, Pane quickNotesPane, Number oldValue, String direction, double menuHeight, double independentQuickNotesHeight) {
 		boolean isHeight;
 		double percentage;
 		
@@ -22,13 +22,13 @@ public class StageResizeService {
 			percentage = primaryStage.getWidth()/oldValue.doubleValue();
 		}
 		
-		updateMainPane(primaryStage, mainPane, isHeight, percentage);
-		updateQuickNotesPane(primaryStage, quickNotesPane, isHeight, percentage);
+		updateMainPane(primaryStage, mainPane, isHeight, percentage, menuHeight);
+		updateQuickNotesPane(primaryStage, quickNotesPane, isHeight, percentage, menuHeight, independentQuickNotesHeight);
 	}
 	
-	public void updateMainPane(Stage primaryStage, Pane mainPane, boolean isHeight, double percentage) {
+	public void updateMainPane(Stage primaryStage, Pane mainPane, boolean isHeight, double percentage, double menuHeight) {
 		if(isHeight) {
-			mainPane.setPrefHeight(primaryStage.getHeight()-110-10);
+			mainPane.setPrefHeight(primaryStage.getHeight()-menuHeight);
 			mainPane.getChildren().forEach(child -> {
 				Control currentchild = ((Control)child);
 				currentchild.setPrefHeight(currentchild.getHeight()*percentage);
@@ -42,16 +42,15 @@ public class StageResizeService {
 		}
 	}
 	
-	public void updateQuickNotesPane(Stage primaryStage, Pane quickNotesPane, boolean isHeight, double percentage) {
-		if(isHeight) {			
-			quickNotesPane.setPrefHeight(primaryStage.getHeight()-110-10);
+	public void updateQuickNotesPane(Stage primaryStage, Pane quickNotesPane, boolean isHeight, double percentage, double menuHeight, double independentQuickNotesHeight) {
+		if(isHeight) {
+			quickNotesPane.setPrefHeight(primaryStage.getHeight()-menuHeight);
 			VBox quickNotesPaneVbox = ((VBox)quickNotesPane.getChildren().get(0));
 			quickNotesPaneVbox.setPrefHeight(quickNotesPane.getHeight());
 			quickNotesPaneVbox.getChildren().forEach(child -> {
 				Control currentchild = ((Control)child);
 				if(currentchild.getClass().equals(TextArea.class) || currentchild.getClass().equals(ListView.class)) {
-					//TODO: Zu hohe abhängigkeit von Werten!!! auchan anderen Stellen besser machen
-					currentchild.setPrefHeight((quickNotesPaneVbox.getHeight()-25-25-5-30-10-30-15-30-10)/2);
+					currentchild.setPrefHeight((quickNotesPaneVbox.getHeight()-independentQuickNotesHeight)/2);
 				}
 			});
 			
