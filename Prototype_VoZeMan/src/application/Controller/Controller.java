@@ -149,7 +149,8 @@ public class Controller {
 	}
 	//Listening on Main Window Size
 	ChangeListener<Number> stageSizeListener = (observable, oldValue, newValue) -> {
-		stageResizeService.ResizeStage(primaryStage, mainPane, quickNotesPane, oldValue, observable.toString().split("name: ")[1].split(",")[0], menuHeight, independentQuickNotesHeight);
+		//stageResizeService.resizeStage(primaryStage, mainPane, quickNotesPane, menuHeight, independentQuickNotesHeight);
+		stageResizeService.resizeEventHandler(primaryStage, mainPane, quickNotesPane, menuHeight, independentQuickNotesHeight);
 	};
 	//Get Listener-Method for "Main.java" Class
 	public ChangeListener<Number> getStageSizeListener() {
@@ -214,6 +215,9 @@ public class Controller {
 			//TODO load Settings mainWindow
 			settingsService.show(mainPane, mainWindowLabel);
 		}
+		
+		//TODO: Buggy
+		stageResizeService.resizeStage(primaryStage, mainPane, quickNotesPane, menuHeight, independentQuickNotesHeight);
 	}
 
 	//Listening to Secondary-Menu-Button clicks
