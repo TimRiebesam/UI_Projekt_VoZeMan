@@ -15,26 +15,28 @@ public class StageResizeService {
 	
 	public void resizeEventHandler(Stage primaryStage, Pane mainPane, Pane quickNotesPane, double menuHeight, double independentQuickNotesHeight) {
 		currentTimeMillis = System.currentTimeMillis();
-		resizing = true;
-		Thread t1 = new Thread(new Runnable() {
-			public void run() {
-				while(resizing) {
-					if(System.currentTimeMillis() > currentTimeMillis+100) {
-						resizing = false;
-						resizeStage(primaryStage, mainPane, quickNotesPane, menuHeight, independentQuickNotesHeight);
-						Thread.currentThread().interrupt();
-					}
-					else {
-						try {
-							Thread.sleep(100);
-						} catch (InterruptedException e) {
-							e.printStackTrace();
+		if(!resizing) {
+			resizing = true;
+			Thread t1 = new Thread(new Runnable() {
+				public void run() {
+					while(resizing) {
+						if(System.currentTimeMillis() > currentTimeMillis+100) {
+							resizing = false;
+							resizeStage(primaryStage, mainPane, quickNotesPane, menuHeight, independentQuickNotesHeight);
+							Thread.currentThread().interrupt();
+						}
+						else {
+							try {
+								Thread.sleep(100);
+							} catch (InterruptedException e) {
+								e.printStackTrace();
+							}
 						}
 					}
 				}
-			}
-		});
-		t1.start();
+			});
+			t1.start();
+		}
 	}
 	
 	public void resizeStage(Stage primaryStage, Pane mainPane, Pane quickNotesPane, double menuHeight, double independentQuickNotesHeight) {
