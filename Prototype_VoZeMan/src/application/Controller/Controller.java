@@ -216,7 +216,6 @@ public class Controller {
 			settingsService.show(mainPane, mainWindowLabel);
 		}
 		
-		//TODO: Buggy
 		stageResizeService.resizeStage(primaryStage, mainPane, quickNotesPane, menuHeight, independentQuickNotesHeight);
 	}
 
@@ -246,6 +245,7 @@ public class Controller {
 		if(choosenItem != -1) {
 			menuService.changeMenu(menuButtons, menuNotes, menuSecondaryButtons, menuSecondaryBtnOne);
 			notesService.showNote(choosenItem, mainPane, mainWindowForNotes, notesWindowListView, notesWindowTextField, notesWindowTextArea, notesListview);
+			stageResizeService.resizeStage(primaryStage, mainPane, quickNotesPane, menuHeight, independentQuickNotesHeight);
 		}
 	}
 	

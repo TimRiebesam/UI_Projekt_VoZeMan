@@ -16,17 +16,17 @@ public class StageResizeService {
 	public void resizeEventHandler(Stage primaryStage, Pane mainPane, Pane quickNotesPane, double menuHeight, double independentQuickNotesHeight) {
 		currentTimeMillis = System.currentTimeMillis();
 		resizing = true;
-		
 		Thread t1 = new Thread(new Runnable() {
 			public void run() {
 				while(resizing) {
-					if(System.currentTimeMillis() > currentTimeMillis+500) {
+					if(System.currentTimeMillis() > currentTimeMillis+100) {
 						resizing = false;
 						resizeStage(primaryStage, mainPane, quickNotesPane, menuHeight, independentQuickNotesHeight);
+						Thread.currentThread().interrupt();
 					}
 					else {
 						try {
-							Thread.sleep(500);
+							Thread.sleep(100);
 						} catch (InterruptedException e) {
 							e.printStackTrace();
 						}
@@ -42,7 +42,7 @@ public class StageResizeService {
 		updateQuickNotesPane(primaryStage, quickNotesPane, menuHeight, independentQuickNotesHeight);
 	}
 	
-	public void updateMainPane(Stage primaryStage, Pane mainPane, double menuHeight) {	
+	private void updateMainPane(Stage primaryStage, Pane mainPane, double menuHeight) {	
 		switch (mainPane.getChildren().get(0).getId()) {
 		case "mainWindowForNotes":
 			resizeNotesWindow(primaryStage, mainPane, menuHeight);
@@ -93,7 +93,7 @@ public class StageResizeService {
 		mainPane.autosize();
 	}
 	
-	public void updateQuickNotesPane(Stage primaryStage, Pane quickNotesPane, double menuHeight, double independentQuickNotesHeight) {
+	private void updateQuickNotesPane(Stage primaryStage, Pane quickNotesPane, double menuHeight, double independentQuickNotesHeight) {
 		quickNotesPane.setPrefSize((primaryStage.getWidth()-50)*0.3, primaryStage.getHeight()-menuHeight-40);
 		quickNotesPane.autosize();
 		
