@@ -1,14 +1,13 @@
 package application.Model.Service;
 
-import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 
 public class RoomesService {
 
-	public void show(Pane mainPane, Label mainWindowLabel) {
+	public void show(Pane mainPane, Pane mainWindowForRoomes) {
 		mainPane.getChildren().clear();
-		mainPane.getChildren().add(mainWindowLabel);
-		mainWindowLabel.setVisible(true);
+		mainPane.getChildren().add(mainWindowForRoomes);
+		mainWindowForRoomes.setVisible(true);
 	}
 	
 }

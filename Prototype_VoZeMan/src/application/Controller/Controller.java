@@ -20,10 +20,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 public class Controller {
@@ -114,6 +116,23 @@ public class Controller {
 	@FXML
 	private Button notesWindowSaveBtn;
 	
+	//Main-Content-Window for Roomes Page
+	//ImageView for Roomes
+	@FXML
+    private VBox mainWindowForRoomes;
+    @FXML
+    private TextField RoomesWindowSearchField;
+    @FXML
+    private ImageView RoomesWindowImageView;
+    
+    //Main-Content-Window for Rapla Page
+  	//WebView for Rapla
+    @FXML
+    private Pane mainWindowForRapla;
+
+    @FXML
+    private WebView raplaWindowWebView;
+	
 	//Adding Services to Class (HandleServicesService to make other Services to an Singleton
 	private MenuService menuService = HandleServicesService.getMenuService();
 	private RaplaService raplaService = HandleServicesService.getRaplaService();
@@ -133,9 +152,12 @@ public class Controller {
 
 	//Setting-Up Start-Up-Page
 	public void loadStartPage() {
-		mainPane.getChildren().clear();
-		mainPane.getChildren().add(mainWindowLabel);
-		mainWindowLabel.setVisible(true);
+		menuService.changeMenu(menuButtons, menuRapla, menuSecondaryButtons, menuSecondaryBtnOne);
+		raplaService.show(mainPane, mainWindowForRapla, raplaWindowWebView);
+		stageResizeService.resizeStage(primaryStage, mainPane, quickNotesPane, menuHeight, independentQuickNotesHeight);
+//		mainPane.getChildren().clear();
+//		mainPane.getChildren().add(mainWindowLabel);
+//		mainWindowLabel.setVisible(true);
 		notesService.updateNotesView(notesTitleTextField, notesTextArea, notesListview, notesWindowListView);
 	}
 	
@@ -194,14 +216,14 @@ public class Controller {
 		
 		if(target.equals(menuRapla)) {
 			//TODO load Rapla mainWindow
-			raplaService.show(mainPane, mainWindowLabel);
+			raplaService.show(mainPane, mainWindowForRapla, raplaWindowWebView);
 		}
 		else if(target.equals(menuNotes)) {
 			notesService.show(mainPane, mainWindowForNotes, notesWindowListView, notesListview);
 		}
 		else if(target.equals(menuRoomes)) {
 			//TODO load Roomes mainWindow
-			roomesService.show(mainPane, mainWindowLabel);
+			roomesService.show(mainPane, mainWindowForRoomes);
 		}
 		else if(target.equals(menuMensa)) {
 			//TODO load Mensa mainWindow
