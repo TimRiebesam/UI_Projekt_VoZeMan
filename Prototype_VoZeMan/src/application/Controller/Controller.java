@@ -132,6 +132,15 @@ public class Controller {
     @FXML
     private WebView raplaWindowWebView;
     
+    //Main-Content for Settings Page, Boxes and Controls
+    @FXML
+    private Pane mainWindowForSettings;
+    @FXML
+    private TextField raplaLinkTextField;
+    @FXML
+    private Label raplaLinkEintragenLabel;
+    
+    
     //Main-Content-Window for Mensa Page
   	//WebView for Mensa
     @FXML
@@ -241,7 +250,7 @@ public class Controller {
 		}
 		else if(target.equals(menuSettings)) {
 			//TODO load Settings mainWindow
-			settingsService.show(mainPane, mainWindowLabel);
+			settingsService.show(mainPane, mainWindowForSettings);
 		}
 		
 		stageResizeService.resizeStage(primaryStage, mainPane, quickNotesPane, menuHeight, independentQuickNotesHeight);
@@ -287,5 +296,6 @@ public class Controller {
 		notesService.updateNote(notesListview.getSelectionModel().getSelectedIndex(), notesWindowTextField, notesWindowTextArea, notesWindowSaveBtn);
 		notesService.show(mainPane, mainWindowForNotes, notesWindowListView, notesListview);
 	}
+	 
 
 }

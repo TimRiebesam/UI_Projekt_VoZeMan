@@ -124,6 +124,12 @@
                   <WebView fx:id="mensaWindowWebView" minHeight="-Infinity" minWidth="-Infinity" prefWidth="680.0" />
                </children>
             </Pane>
+            <Pane fx:id="mainWindowForSettings" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0">
+               <children>
+                  <TextField fx:id="raplaLinkTextField" layoutX="225.0" layoutY="70.0" prefHeight="25.0" prefWidth="434.0" />
+                  <Label fx:id="raplaLinkEintragenLabel" layoutX="18.0" layoutY="68.0" prefHeight="30.0" prefWidth="149.0" text="Hier Rapla-Link eintragen:" />
+               </children>
+            </Pane>
          </children>
       </Pane>
       <Pane fx:id="quickNotesPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="280.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="110.0">
