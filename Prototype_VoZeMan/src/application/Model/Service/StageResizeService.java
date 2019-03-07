@@ -60,6 +60,10 @@ public class StageResizeService {
 			resizeRaplaWindow(primaryStage, mainPane, menuHeight);
 			break;
 			
+		case "mainWindowForMensa":
+			resizeMensaWindow(primaryStage, mainPane, menuHeight);
+			break;
+			
 		default:
 			resizeMainPane(primaryStage, mainPane, menuHeight);
 			((Control)mainPane.getChildren().get(0)).setPrefSize(mainPane.getWidth(), mainPane.getHeight());
@@ -123,6 +127,10 @@ public class StageResizeService {
 		WebView web = (WebView)content.getChildren().get(0);
 		web.setPrefSize(content.getWidth(), content.getHeight());
 		web.autosize();
+	}
+	
+	private void resizeMensaWindow(Stage primaryStage, Pane mainPane, double menuHeight) {
+		resizeRaplaWindow(primaryStage, mainPane, menuHeight);
 	}
 	
 	private void resizeMainPane(Stage primaryStage, Pane mainPane, double menuHeight) {

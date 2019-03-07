@@ -129,9 +129,15 @@ public class Controller {
   	//WebView for Rapla
     @FXML
     private Pane mainWindowForRapla;
-
     @FXML
     private WebView raplaWindowWebView;
+    
+    //Main-Content-Window for Mensa Page
+  	//WebView for Mensa
+    @FXML
+    private Pane mainWindowForMensa;
+    @FXML
+    private WebView mensaWindowWebView;
 	
 	//Adding Services to Class (HandleServicesService to make other Services to an Singleton
 	private MenuService menuService = HandleServicesService.getMenuService();
@@ -227,7 +233,7 @@ public class Controller {
 		}
 		else if(target.equals(menuMensa)) {
 			//TODO load Mensa mainWindow
-			mensaService.show(mainPane, mainWindowLabel);
+			mensaService.show(mainPane, mainWindowForMensa, mensaWindowWebView);
 		}
 		else if(target.equals(menuLecturers)) {
 			//TODO load Lectrueres mainWindow

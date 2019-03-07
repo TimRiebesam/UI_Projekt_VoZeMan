@@ -119,6 +119,11 @@
                   <WebView fx:id="raplaWindowWebView" minHeight="-Infinity" minWidth="-Infinity" prefWidth="680.0" />
                </children>
             </Pane>
+            <Pane fx:id="mainWindowForMensa" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0">
+               <children>
+                  <WebView fx:id="mensaWindowWebView" minHeight="-Infinity" minWidth="-Infinity" prefWidth="680.0" />
+               </children>
+            </Pane>
          </children>
       </Pane>
       <Pane fx:id="quickNotesPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="280.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="110.0">
