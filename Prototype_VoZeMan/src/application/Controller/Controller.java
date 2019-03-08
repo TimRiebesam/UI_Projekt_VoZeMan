@@ -139,6 +139,8 @@ public class Controller {
     private TextField raplaWindowTextField;
     @FXML
     private Label raplaWindowEintragenLabel;
+    @FXML
+    private Button settingsWindowSaveButton;
     
     
     //Main-Content-Window for Mensa Page
