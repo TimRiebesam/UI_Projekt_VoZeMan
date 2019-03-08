@@ -128,7 +128,7 @@
                <children>
                   <TextField fx:id="raplaWindowTextField" layoutX="225.0" layoutY="70.0" prefHeight="25.0" prefWidth="434.0" />
                   <Label fx:id="raplaWindowEintragenLabel" layoutX="18.0" layoutY="68.0" prefHeight="30.0" prefWidth="149.0" text="Hier Rapla-Link eintragen:" />
-                  <Button layoutX="226.0" layoutY="104.0" mnemonicParsing="false" onAction="#settingsWindowSaveButton" prefHeight="25.0" prefWidth="106.0" text="Speichern" />
+                  <Button layoutX="226.5" layoutY="104.0" mnemonicParsing="false" onAction="#settingsWindowSaveButton" prefHeight="25.0" prefWidth="106.0" text="Speichern" />
                </children>
             </Pane>
          </children>
