@@ -121,9 +121,9 @@ public class Controller {
 	@FXML
     private VBox mainWindowForRoomes;
     @FXML
-    private TextField RoomesWindowSearchField;
+    private TextField roomesWindowSearchField;
     @FXML
-    private ImageView RoomesWindowImageView;
+    private ImageView roomesWindowImageView;
     
     //Main-Content-Window for Rapla Page
   	//WebView for Rapla
@@ -136,9 +136,9 @@ public class Controller {
     @FXML
     private Pane mainWindowForSettings;
     @FXML
-    private TextField raplaLinkTextField;
+    private TextField raplaWindowTextField;
     @FXML
-    private Label raplaLinkEintragenLabel;
+    private Label raplaWindowEintragenLabel;
     
     
     //Main-Content-Window for Mensa Page

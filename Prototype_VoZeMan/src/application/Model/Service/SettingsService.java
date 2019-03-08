@@ -8,10 +8,10 @@ public class SettingsService {
 	
 	private String raplaUrl = "https://rapla.dhbw-karlsruhe.de/rapla?page=calendar&user=brockmans&file=WWI17B1";
 
-	public void show(Pane mainPane, Pane mainWindowLabel) {
+	public void show(Pane mainPane, Pane mainWindowForSettings) {
 		mainPane.getChildren().clear();
-		mainPane.getChildren().add(mainWindowLabel);
-		mainWindowLabel.setVisible(true);
+		mainPane.getChildren().add(mainWindowForSettings);
+		mainWindowForSettings.setVisible(true);
 	}
 	
 	public void setRaplaUrl(String raplaUrl) {
