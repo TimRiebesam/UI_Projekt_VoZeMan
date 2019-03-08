@@ -146,7 +146,7 @@ public class Controller {
     @FXML
     private Pane mainWindowForMensa;
     @FXML
-    private WebView mensaWindowWebView;
+    private ImageView mensaWindowImageView;
 	
 	//Adding Services to Class (HandleServicesService to make other Services to an Singleton
 	private MenuService menuService = HandleServicesService.getMenuService();
@@ -242,7 +242,7 @@ public class Controller {
 		}
 		else if(target.equals(menuMensa)) {
 			//TODO load Mensa mainWindow
-			mensaService.show(mainPane, mainWindowForMensa, mensaWindowWebView);
+			mensaService.show(mainPane, mainWindowForMensa, mensaWindowImageView);
 		}
 		else if(target.equals(menuLecturers)) {
 			//TODO load Lectrueres mainWindow

@@ -3,24 +3,26 @@ package application.Model.Service;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
 
 public class MensaService {
 
-	public void show(Pane mainPane, Pane mainWindowForRapla, WebView raplaWindowWebView) {
+	public void show(Pane mainPane, Pane mainWindowForMensa, ImageView mensaWindowImageView) {
 		mainPane.getChildren().clear();
-		mainPane.getChildren().add(mainWindowForRapla);
-		mainWindowForRapla.setVisible(true);
+		mainPane.getChildren().add(mainWindowForMensa);
+		mainWindowForMensa.setVisible(true);
 		
-		WebEngine webEngine = raplaWindowWebView.getEngine();
-		webEngine.load(loadMensaPlan());
-		System.out.println(loadMensaPlan());
+		
 	}
 	
-	private String loadMensaPlan() {
-		return "https://www.sw-ka.de/de/essen/?pdf&gen&c=erzberger&p=1&d=" + getDateInYearMonthDateFormat();
+	private Image loadMensaPlanAsImage() {
+		String pathToPdf = "https://www.sw-ka.de/de/essen/?pdf&gen&c=erzberger&p=1&d=" + getDateInYearMonthDateFormat();
+		
+		
+		
+		return null;
 	}
 	
 	private String getDateInYearMonthDateFormat() {
