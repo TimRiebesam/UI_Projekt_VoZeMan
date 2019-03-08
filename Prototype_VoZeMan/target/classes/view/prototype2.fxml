@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane style="-fx-background-color: #ffffff;" stylesheets="@styles/application.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller.Controller">
+   <children>
+      <VBox prefHeight="700.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="pageTitle" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="35.0" prefWidth="1000.0" styleClass="head" text="Information about current Page" textFill="WHITE">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+            </Label>
+            <HBox fx:id="menuHBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="36.0" prefWidth="1000.0" styleClass="head">
+               <children>
+                  <Button fx:id="menuRapla" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeMenu" prefHeight="35.0" prefWidth="166.0" styleClass="btn-menu-not-active" text="RAPLA" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="menuNotes" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeMenu" prefHeight="36.0" prefWidth="166.0" styleClass="btn-menu-not-active" text="Notizen" textFill="WHITE" />
+                  <Button fx:id="menuRoomes" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeMenu" prefHeight="36.0" prefWidth="166.0" styleClass="btn-menu-not-active" text="Raumbelegung" textFill="WHITE" />
+                  <Button fx:id="menuMensa" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeMenu" prefHeight="36.0" prefWidth="166.0" styleClass="btn-menu-not-active" text="Mensa" textFill="WHITE" />
+                  <Button fx:id="menuLecturers" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeMenu" prefHeight="36.0" prefWidth="166.0" styleClass="btn-menu-not-active" text="Dozenten" textFill="WHITE" />
+                  <Button fx:id="menuSettings" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeMenu" prefHeight="36.0" prefWidth="166.0" styleClass="btn-menu-not-active" text="Einstellungen" textFill="WHITE" />
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox fx:id="secondaryMenuHBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="30.0" prefWidth="1000.0" styleClass="secondary-menu">
+               <children>
+                  <Button fx:id="menuSecondaryBtnOne" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeSecondaryMenu" prefHeight="35.0" prefWidth="166.0" styleClass="btn-secondary-edge-active" text="more" />
+                  <Button fx:id="menuSecondaryBtnTwo" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeSecondaryMenu" prefHeight="35.0" prefWidth="166.0" styleClass="btn-secondary-edge" text="menu" />
+                  <Button fx:id="menuSecondaryBtnThree" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeSecondaryMenu" prefHeight="35.0" prefWidth="166.0" styleClass="btn-secondary-edge" text="for" textFill="#2a2f33" />
+                  <Button fx:id="menuSecondaryBtnFour" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeSecondaryMenu" prefHeight="35.0" prefWidth="166.0" styleClass="btn-secondary-edge" text="current" textFill="#2a2f33" />
+                  <Button fx:id="menuSecondaryBtnFive" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeSecondaryMenu" prefHeight="35.0" prefWidth="166.0" styleClass="btn-secondary-edge" text="option" textFill="#2a2f33" />
+                  <Button fx:id="menuSecondaryBtnSix" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeSecondaryMenu" prefHeight="35.0" prefWidth="166.0" styleClass="btn-secondary-edge" textFill="#2a2f33" />
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <Separator maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.3" prefWidth="1000.0" />
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" />
+         </children>
+      </VBox>
+      <Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="110.0">
+         <children>
+            <Label fx:id="mainWindowLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0" style="-fx-background-color: #666666;" text="Main Window" textFill="#2a2f33" visible="false">
+               <font>
+                  <Font size="67.0" />
+               </font>
+            </Label>
+            <HBox fx:id="mainWindowForNotes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0">
+               <children>
+                  <VBox fx:id="vBoxForNotesWindowListView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="238.0">
+                     <children>
+                        <ListView fx:id="notesWindowListView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#notesWindowShowNote" prefHeight="600.0" prefWidth="228.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </ListView>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="vBoxForNotesWindowEditArea" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="442.0">
+                     <children>
+                        <TextField fx:id="notesWindowTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyTyped="#noteTextChanged" prefHeight="40.0" prefWidth="442.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font></TextField>
+                        <TextArea fx:id="notesWindowTextArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyTyped="#noteTextChanged" prefHeight="510.0" prefWidth="442.0">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextArea>
+                        <Button fx:id="notesWindowSaveBtn" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#noteWindowSaveChanges" prefHeight="30.0" prefWidth="440.0" styleClass="btn-primary" text="Änderungen Speichern">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox fx:id="mainWindowForRoomes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0">
+               <children>
+                  <TextField fx:id="RoomesWindowSearchField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="680.0" promptText="Hier Raum suchen" />
+                  <ImageView fx:id="RoomesWindowImageView" fitHeight="600.0" fitWidth="680.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/dhbw-plan.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <Pane fx:id="mainWindowForRapla" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0">
+               <children>
+                  <WebView fx:id="raplaWindowWebView" minHeight="-Infinity" minWidth="-Infinity" prefWidth="680.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="mainWindowForMensa" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0">
+               <children>
+                  <ImageView fx:id="mensaWindowImageView" fitHeight="600.0" fitWidth="680.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </Pane>
+            <Pane fx:id="mainWindowForSettings" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0">
+               <children>
+                  <TextField fx:id="raplaWindowTextField" layoutX="225.0" layoutY="70.0" prefHeight="25.0" prefWidth="434.0" />
+                  <Label fx:id="raplaWindowEintragenLabel" layoutX="18.0" layoutY="68.0" prefHeight="30.0" prefWidth="149.0" text="Hier Rapla-Link eintragen:" />
+                  <Button layoutX="226.0" layoutY="104.0" mnemonicParsing="false" onAction="#settingsWindowSaveButton" prefHeight="25.0" prefWidth="80.0" text="Speichern" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="quickNotesPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="280.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="110.0">
+         <children>
+            <Separator maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="0.0">
+               <padding>
+                  <Insets right="15.0" />
+               </padding>
+            </Separator>
+            <VBox fx:id="btnSaveNotes" alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="280.0">
+               <children>
+                  <Label fx:id="quickNotesLabel" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="280.0" text="Quick Notes" textFill="#2a2f33">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="notesTitleTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="280.0" promptText="Titel">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextField>
+                  <TextArea fx:id="notesTextArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="225.0" prefWidth="280.0" promptText="Notiz">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </TextArea>
+                  <Button fx:id="saveNote" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNote" prefHeight="30.0" prefWidth="280.0" styleClass="btn-primary" text="Notiz speichern" textFill="#e8e8e3">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Label fx:id="lastSavedNotesLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="280.0" text="Zuletzt gespeicherte Notizen" textFill="#2a2f33">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="notesListview" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#showNote" prefHeight="225.0" prefWidth="280.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </ListView>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

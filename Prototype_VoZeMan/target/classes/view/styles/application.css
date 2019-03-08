@@ -1,0 +1,78 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.head{
+	-fx-background-color: #b5141c;
+}
+
+.menu{
+	-fx-background-color: #cbcbc7;
+}
+
+.secondary-menu {
+	-fx-background-color: #8e1016;
+}
+
+.btn-menu-active {
+	-fx-background-color: #8e1016;
+	-fx-background-radius: 3 3 0 0;
+}
+
+.btn-menu-not-active {
+	-fx-background-color: #b5141c;
+	-fx-background-radius: 3 3 0 0;
+	-fx-text-fill: #ffffff;
+}
+
+.btn-menu-not-active:hover {
+	-fx-font-weight: bold;
+}
+
+.btn-primary {
+	-fx-background-color: #b5141c;
+	-fx-text-fill: #ffffff;
+}
+
+.btn-secondary {
+	-fx-background-color: #8e1016;
+	-fx-text-fill: #ffffff;
+}
+
+.btn-primary-edge {
+	-fx-background-color: #b5141c;
+	-fx-background-radius: 0;
+	-fx-text-fill: #ffffff;
+}
+
+.btn-secondary-edge {
+	-fx-background-color: #8e1016;
+	-fx-background-radius: 0;
+	-fx-text-fill: #ffffff;
+}
+
+.btn-secondary-edge:hover {
+	-fx-font-weight: bold;
+}
+
+.btn-white {
+	-fx-background-color: #ffffff;
+	-fx-text-fill: #000000;
+}
+
+.btn-white-edge {
+	-fx-background-color: #ffffff;
+	-fx-background-radius: 0;
+	-fx-text-fill: #000000;
+}
+
+.btn-secondary-active {
+	-fx-background-color: #8e1016;
+	-fx-text-fill: #ffffff;
+	-fx-font-weight: bold;
+}
+
+.btn-secondary-edge-active {
+	-fx-background-color: #8e1016;
+	-fx-background-radius: 0;
+	-fx-text-fill: #ffffff;
+	-fx-font-weight: bold;
+}
