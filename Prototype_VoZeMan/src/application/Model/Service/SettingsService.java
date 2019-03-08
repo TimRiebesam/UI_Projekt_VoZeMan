@@ -5,8 +5,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 
 public class SettingsService {
-	
-	private String raplaUrl = "https://rapla.dhbw-karlsruhe.de/rapla?page=calendar&user=brockmans&file=WWI17B1";
+
+	private String raplaUrl;
 
 	public void show(Pane mainPane, Pane mainWindowForSettings) {
 		mainPane.getChildren().clear();

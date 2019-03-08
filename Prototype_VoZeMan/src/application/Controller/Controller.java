@@ -298,6 +298,13 @@ public class Controller {
 		notesService.updateNote(notesListview.getSelectionModel().getSelectedIndex(), notesWindowTextField, notesWindowTextArea, notesWindowSaveBtn);
 		notesService.show(mainPane, mainWindowForNotes, notesWindowListView, notesListview);
 	}
+	
+	//Buttonfunctionality in SettingsWindow
+	@FXML
+	void settingsWindowSaveButton (ActionEvent event) {
+		settingsService.setRaplaUrl(raplaWindowTextField.getText());
+		raplaWindowTextField.setText("");
+	}
 	 
 
 }
