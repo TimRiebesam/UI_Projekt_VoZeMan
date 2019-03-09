@@ -130,7 +130,14 @@ public class StageResizeService {
 	}
 	
 	private void resizeMensaWindow(Stage primaryStage, Pane mainPane, double menuHeight) {
-		resizeRaplaWindow(primaryStage, mainPane, menuHeight);
+		resizeMainPane(primaryStage, mainPane, menuHeight);
+		Pane content = (Pane)mainPane.getChildren().get(0);
+		resizeMainPane(primaryStage, content, menuHeight);
+		
+		ImageView image = (ImageView)content.getChildren().get(0);
+		image.setFitWidth(content.getWidth());
+		image.setFitHeight(content.getHeight());
+		image.autosize();
 	}
 	
 	private void resizeMainPane(Stage primaryStage, Pane mainPane, double menuHeight) {

@@ -1,12 +1,10 @@
 package application.Model.Service;
 
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
@@ -17,35 +15,37 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
 public class MensaService {
+	
+	private Image mensaPlanForToday;
 
 	public void show(Pane mainPane, Pane mainWindowForMensa, ImageView mensaWindowImageView) {
 		mainPane.getChildren().clear();
 		mainPane.getChildren().add(mainWindowForMensa);
-		mainWindowForMensa.setVisible(true);
-		
-		
-		
-		mensaWindowImageView.setImage(loadMensaPlanAsImage().iterator().next());
+		mainWindowForMensa.setVisible(true);		
+		mensaWindowImageView.setImage(getMensaPlanForToday());
 	}
 	
-	private List<Image> loadMensaPlanAsImage() {
-		List<Image> images = new ArrayList<>();
-		String pathToPdf = "https://www.sw-ka.de/de/essen/?pdf&gen&c=erzberger&p=1&d=" + getDateInYearMonthDateFormat();
-		
+	private Image getMensaPlanForToday() {
+		if(mensaPlanForToday == null) {
+			String pathToPdf = "https://www.sw-ka.de/de/essen/?pdf&gen&c=erzberger&p=1&d=" + getDateInYearMonthDateFormat();
+			mensaPlanForToday = loadMensaPlanAsImage(pathToPdf);
+		}
+		return mensaPlanForToday;
+	}
+	
+	private Image loadMensaPlanAsImage(String pathToPdf) {
 		try {
-			PDDocument document = PDDocument.loadNonSeq(new File(pathToPdf), null);
-			List<PDPage> pdPages = document.getDocumentCatalog().getAllPages();
+			PDDocument pdfFromWeb = PDDocument.load(new URL(pathToPdf));
 			
-			int page = 0;
-			for (PDPage pdPage : pdPages)
-			{ 
-			    ++page;
-			    BufferedImage bimg = pdPage.convertToImage(BufferedImage.TYPE_INT_RGB, 300);
-			    images.add(SwingFXUtils.toFXImage(bimg, null));
-			}
-			document.close();
-			return images;
+			PDPage pageOne = (PDPage)pdfFromWeb.getDocumentCatalog().getAllPages().get(0);
 			
+			BufferedImage originalBimg = pageOne.convertToImage(BufferedImage.TYPE_INT_RGB, 300);
+			BufferedImage croppedImage = originalBimg.getSubimage(0, 0, originalBimg.getWidth(), originalBimg.getHeight()/2);
+			
+			pdfFromWeb.close();
+			
+			return SwingFXUtils.toFXImage(croppedImage, null);
+		
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
