@@ -1,7 +1,7 @@
 package application;
 	
-import application.Controller.Controller;
 import application.Model.Service.HandleServicesService;
+import application.controller.Controller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -15,11 +15,11 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			//Hier anpassen um anderen Prototype zu testen!!!
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/prototype2.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/view.fxml"));
 			Parent root = (Parent)loader.load();
 			
 			Scene scene = new Scene(root);
-			scene.getStylesheets().add(getClass().getResource("/view/styles/application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/application/view/styles/application.css").toExternalForm());
 			
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("VoZeMan - DHBW Karlsruhe");

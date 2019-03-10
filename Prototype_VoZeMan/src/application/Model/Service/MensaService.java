@@ -21,7 +21,11 @@ public class MensaService {
 	public void show(Pane mainPane, Pane mainWindowForMensa, ImageView mensaWindowImageView) {
 		mainPane.getChildren().clear();
 		mainPane.getChildren().add(mainWindowForMensa);
-		mainWindowForMensa.setVisible(true);		
+		mainWindowForMensa.setVisible(true);
+		
+		//TODO wird nicht angezeigt weil direkt überschrieben!
+		mensaWindowImageView.setImage(new Image("application/view/img/loading-loop.gif"));
+		
 		mensaWindowImageView.setImage(getMensaPlanForToday());
 	}
 	

@@ -1,6 +1,6 @@
 package application.Model.Service;
 
-import application.Controller.Controller;
+import application.controller.Controller;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 

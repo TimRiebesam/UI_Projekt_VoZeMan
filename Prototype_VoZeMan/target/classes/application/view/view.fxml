@@ -106,8 +106,8 @@
             </HBox>
             <VBox fx:id="mainWindowForRoomes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0">
                <children>
-                  <TextField fx:id="RoomesWindowSearchField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="680.0" promptText="Hier Raum suchen" />
-                  <ImageView fx:id="RoomesWindowImageView" fitHeight="600.0" fitWidth="680.0" pickOnBounds="true" preserveRatio="true">
+                  <TextField fx:id="roomesWindowSearchField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="680.0" promptText="Hier Raum suchen" />
+                  <ImageView fx:id="roomesWindowImageView" fitHeight="600.0" fitWidth="680.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@img/dhbw-plan.jpg" />
                      </image>
