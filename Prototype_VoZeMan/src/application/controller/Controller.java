@@ -12,7 +12,6 @@ import application.Model.Service.RoomesService;
 import application.Model.Service.SettingsService;
 import application.Model.Service.StageResizeService;
 import javafx.beans.value.ChangeListener;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;

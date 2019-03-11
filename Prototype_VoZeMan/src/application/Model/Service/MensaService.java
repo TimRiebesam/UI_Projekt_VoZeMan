@@ -9,6 +9,7 @@ import java.util.Date;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 
+import javafx.application.Platform;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -23,12 +24,34 @@ public class MensaService {
 		mainPane.getChildren().add(mainWindowForMensa);
 		mainWindowForMensa.setVisible(true);
 		
-		//TODO wird nicht angezeigt weil direkt überschrieben!
-		mensaWindowImageView.setImage(new Image("application/view/img/loading-loop.gif"));
-		
-		mensaWindowImageView.setImage(getMensaPlanForToday());
+		setMensaPlanAsync(mensaWindowImageView);
 	}
 	
+	private void setMensaPlanAsync(ImageView mensaWindowImageView) {
+		mensaWindowImageView.setImage(new Image("application/view/img/loading-loop.gif"));
+		
+		Thread setMensaPlan = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				Image mensaPlan = getMensaPlanForToday();
+				
+				Runnable updateImageView = new Runnable() {
+					@Override
+					public void run() {
+						mensaWindowImageView.setImage(mensaPlan);
+					}
+				};
+				
+				Platform.runLater(updateImageView);
+				
+				Thread.currentThread().interrupt();
+			}
+		});
+		
+		setMensaPlan.setDaemon(true);
+		setMensaPlan.start();
+	}
+
 	private Image getMensaPlanForToday() {
 		if(mensaPlanForToday == null) {
 			String pathToPdf = "https://www.sw-ka.de/de/essen/?pdf&gen&c=erzberger&p=1&d=" + getDateInYearMonthDateFormat();
