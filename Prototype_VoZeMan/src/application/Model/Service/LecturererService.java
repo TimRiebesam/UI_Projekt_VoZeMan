@@ -5,10 +5,10 @@ import javafx.scene.layout.Pane;
 
 public class LecturererService {
 
-	public void show(Pane mainPane, Label mainWindowLabel) {
+	public void show(Pane mainPane, Pane mainWindowForLecturerer) {
 		mainPane.getChildren().clear();
-		mainPane.getChildren().add(mainWindowLabel);
-		mainWindowLabel.setVisible(true);
+		mainPane.getChildren().add(mainWindowForLecturerer);
+		mainWindowForLecturerer.setVisible(true);
 	}
 	
 }

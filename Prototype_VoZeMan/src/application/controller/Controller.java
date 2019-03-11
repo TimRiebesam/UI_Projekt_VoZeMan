@@ -12,10 +12,12 @@ import application.Model.Service.RoomesService;
 import application.Model.Service.SettingsService;
 import application.Model.Service.StageResizeService;
 import javafx.beans.value.ChangeListener;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
@@ -149,6 +151,14 @@ public class Controller {
     private Pane mainWindowForMensa;
     @FXML
     private ImageView mensaWindowImageView;
+    
+    //Main-Content-Window for Lecturerer Page
+    @FXML
+    private Pane mainWindowForLecturerer;
+    private Label lecturererPageLabel;
+    private ComboBox<String> lecturererPageComboBox;
+    //private ObservableList<String> comboBoxItems;
+    
 	
 	//Adding Services to Class (HandleServicesService to make other Services to an Singleton
 	private MenuService menuService = HandleServicesService.getMenuService();
@@ -248,7 +258,7 @@ public class Controller {
 		}
 		else if(target.equals(menuLecturers)) {
 			//TODO load Lectrueres mainWindow
-			lecturererService.show(mainPane, mainWindowLabel);
+			lecturererService.show(mainPane, mainWindowForLecturerer);
 		}
 		else if(target.equals(menuSettings)) {
 			//TODO load Settings mainWindow
@@ -305,6 +315,13 @@ public class Controller {
 		settingsService.setRaplaUrl(raplaWindowTextField.getText());
 		raplaWindowTextField.setText("");
 	}
+	
+	//Add Items to ComboBox Lecturerer
+	/*@FXML
+	void initzialize() {
+		lecturererPageComboBox.
+	
+	}*/
 	 
 
 }
