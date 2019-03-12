@@ -184,12 +184,13 @@ public class Controller {
 
 	//Setting-Up Start-Up-Page
 	public void loadStartPage() {
+		checkMenuBtnList();
+		checkMenuSecondaryBtnList();
 		menuService.changeMenu(menuButtons, menuRapla, menuSecondaryButtons, menuSecondaryBtnOne);
+		
 		raplaService.show(mainPane, mainWindowForRapla, raplaWindowWebView);
+		
 		stageResizeService.resizeStage(primaryStage, mainPane, quickNotesPane, menuHeight, independentQuickNotesHeight);
-//		mainPane.getChildren().clear();
-//		mainPane.getChildren().add(mainWindowLabel);
-//		mainWindowLabel.setVisible(true);
 		notesService.updateNotesView(notesTitleTextField, notesTextArea, notesListview, notesWindowListView);
 	}
 	
@@ -240,8 +241,6 @@ public class Controller {
 	//Listening to Menu-Button clicks
 	@FXML
 	void changeMenu(ActionEvent event) {
-		checkMenuBtnList();
-		
 		Button target = ((Button)event.getTarget());
 		
 		menuService.changeMenu(menuButtons, target, menuSecondaryButtons, menuSecondaryBtnOne);
@@ -277,7 +276,7 @@ public class Controller {
 	@FXML
 	void changeSecondaryMenu(ActionEvent event) {
 		checkMenuSecondaryBtnList();
-		menuService.changeSecondaryMenu(menuSecondaryButtons, ((Button)event.getTarget()));
+		menuService.changeSecondaryMenu(menuSecondaryButtons, ((Button)event.getTarget()), menuService.getcurrentMenuOption(menuButtons));
 	}
 
 	@FXML
