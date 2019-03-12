@@ -109,13 +109,19 @@ public class StageResizeService {
 		Pane content = (Pane)mainPane.getChildren().get(0);
 		resizeMainPane(primaryStage, content, menuHeight);
 		
-		Control searchField = (Control)content.getChildren().get(0);
-		searchField.setPrefWidth(content.getWidth());
+		Pane searchHBox = (Pane)content.getChildren().get(0);
+		
+		Control searchField = (Control)searchHBox.getChildren().get(0);
+		Control searchBtn = (Control)searchHBox.getChildren().get(1);
+		searchField.setPrefWidth(content.getWidth()-searchBtn.getWidth()-10);
 		searchField.autosize();
 		
-		ImageView image = (ImageView)content.getChildren().get(1);
-		image.setFitWidth(content.getWidth());
-		image.setFitHeight(content.getHeight()-searchField.getHeight());
+		Control searchLabel = (Control)content.getChildren().get(1);
+		searchLabel.setPrefWidth(content.getWidth());
+		searchLabel.autosize();
+		
+		ImageView image = (ImageView)content.getChildren().get(2);
+		image.setFitHeight(content.getHeight()-searchField.getHeight()-searchLabel.getHeight());
 		image.autosize();
 	}
 	

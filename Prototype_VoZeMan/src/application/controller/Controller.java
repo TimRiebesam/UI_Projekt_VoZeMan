@@ -120,9 +120,15 @@ public class Controller {
 	//Main-Content-Window for Roomes Page
 	//ImageView for Roomes
 	@FXML
-    private VBox mainWindowForRoomes;
+	private VBox mainWindowForRoomes;
+	@FXML
+    private HBox roomesWindowHbox;
     @FXML
     private TextField roomesWindowSearchField;
+    @FXML
+    private Button roomesWindowSearchBtn;
+    @FXML
+    private Label roomesWindowResultLabel;
     @FXML
     private ImageView roomesWindowImageView;
     
