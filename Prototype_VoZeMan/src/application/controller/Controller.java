@@ -1,6 +1,7 @@
 package application.controller;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 import application.Model.Service.HandleServicesService;
 import application.Model.Service.LecturererService;
@@ -324,7 +325,17 @@ public class Controller {
 	
 	@FXML
 	void showRoomInformation (ActionEvent event) {
-		//
+		String roomname = roomesWindowSearchField.getText();
+		if (roomname.matches( "(^)([A-G]|[a-g])([0-5])([0-9])([0-9])($)") == true) {
+			char fluegel = roomname.charAt(0);
+			fluegel = Character.toUpperCase(fluegel);
+			char stockwerk = roomname.charAt(1);
+			String raumnummer = roomname.substring(2);
+			roomname = String.valueOf(fluegel)+stockwerk+raumnummer;
+			roomesWindowResultLabel.setText("Ihr gesuchter Raum "+roomname+" sollte sich im "+stockwerk+"ten. Stock des Gebäudeflügels "+fluegel+" befinden.");
+		} else {
+			roomesWindowResultLabel.setText("Ihr gesuchter Raum "+roomname+" erfüllt nicht das Suchpattern im Format [A-G][0-5][00-80]."); 
+		}
 	}
 	
 	
