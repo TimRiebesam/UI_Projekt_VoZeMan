@@ -315,6 +315,13 @@ public class Controller {
 		raplaWindowTextField.setText("");
 	}
 	
+	
+	@FXML
+	void showRoomInformation (ActionEvent event) {
+		//
+	}
+	
+	
 	//Add Items to ComboBox Lecturerer
 	/*@FXML
 	void initzialize() {
