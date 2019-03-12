@@ -71,7 +71,7 @@
 						<Font size="67.0" />
 					</font>
 				</Label>
-				<HBox fx:id="mainWindowForNotes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0">
+				<HBox fx:id="mainWindowForNotes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0" visible="false">
 					<children>
 						<VBox fx:id="vBoxForNotesWindowListView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="238.0">
 							<children>
@@ -108,20 +108,40 @@
 				</HBox>
 				<VBox fx:id="mainWindowForRoomes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0">
 					<children>
-						<TextField fx:id="roomesWindowSearchField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="680.0" promptText="Hier Raum suchen" />
-						<ImageView fx:id="roomesWindowImageView" fitHeight="600.0" fitWidth="680.0" pickOnBounds="true" preserveRatio="true">
+                  <HBox fx:id="roomesWindowHbox" prefHeight="35.0" prefWidth="200.0">
+                     <children>
+      						<TextField fx:id="roomesWindowSearchField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="550.0" promptText="Hier Raum suchen" />
+                        <Button fx:id="roomesWindowSearchBtn" mnemonicParsing="false" prefHeight="35.0" prefWidth="120.0" styleClass="btn-primary" text="suchen">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label fx:id="roomesWindowResultLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="680.0" text="Bitte im Format &quot;[A-G][0-5][00-80]]&quot;suchen">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+						<ImageView fx:id="roomesWindowImageView" fitHeight="530.0" pickOnBounds="true" preserveRatio="true">
 							<image>
 								<Image url="@img/dhbw-plan.jpg" />
 							</image>
 						</ImageView>
 					</children>
 				</VBox>
-				<Pane fx:id="mainWindowForRapla" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0">
+				<Pane fx:id="mainWindowForRapla" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0" visible="false">
 					<children>
 						<WebView fx:id="raplaWindowWebView" minHeight="-Infinity" minWidth="-Infinity" prefWidth="680.0" />
 					</children>
 				</Pane>
-				<Pane fx:id="mainWindowForMensa" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0">
+				<Pane fx:id="mainWindowForMensa" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="680.0" visible="false">
 					<children>
 						<ImageView fx:id="mensaWindowImageView" fitHeight="600.0" fitWidth="680.0" pickOnBounds="true" preserveRatio="true" />
 					</children>
@@ -133,7 +153,7 @@
 						<Button layoutX="226.5" layoutY="104.0" mnemonicParsing="false" onAction="#settingsWindowSaveButton" prefHeight="25.0" prefWidth="106.0" text="Speichern" />
 					</children>
 				</Pane>
-            <Pane fx:id="mainWindowForLecturerer" prefHeight="680.0" prefWidth="680.0">
+            <Pane fx:id="mainWindowForLecturerer" prefHeight="680.0" prefWidth="680.0" visible="false">
                <children>
                   <Label fx:id="lecturererPageLabel" layoutX="40.0" layoutY="47.0" prefHeight="30.0" prefWidth="125.0" text="Dozent auswählen: " />
                   <ComboBox fx:id="lecturererPageComboBox" layoutX="190.0" layoutY="50.0" prefHeight="25.0" prefWidth="179.0" />
