@@ -122,6 +122,7 @@ public class StageResizeService {
 		
 		ImageView image = (ImageView)content.getChildren().get(2);
 		image.setFitHeight(content.getHeight()-searchField.getHeight()-searchLabel.getHeight());
+		image.setFitWidth(content.getWidth());
 		image.autosize();
 	}
 	
