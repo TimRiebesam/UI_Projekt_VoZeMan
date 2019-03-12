@@ -32,7 +32,7 @@
 				</Label>
 				<HBox fx:id="menuHBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="36.0" prefWidth="1000.0" styleClass="head">
 					<children>
-						<Button fx:id="menuRapla" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeMenu" prefHeight="35.0" prefWidth="166.0" styleClass="btn-menu-not-active" text="RAPLA" textFill="WHITE">
+						<Button fx:id="menuRapla" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeMenu" prefHeight="35.0" prefWidth="166.0" styleClass="btn-menu-not-active" text="Duale Hochschule" textFill="WHITE">
 							<HBox.margin>
 								<Insets />
 							</HBox.margin>
