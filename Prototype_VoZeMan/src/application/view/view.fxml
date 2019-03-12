@@ -111,7 +111,7 @@
                   <HBox fx:id="roomesWindowHbox" prefHeight="35.0" prefWidth="200.0">
                      <children>
       						<TextField fx:id="roomesWindowSearchField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="550.0" promptText="Hier Raum suchen" />
-                        <Button fx:id="roomesWindowSearchBtn" mnemonicParsing="false" prefHeight="35.0" prefWidth="120.0" styleClass="btn-primary" text="suchen">
+                        <Button fx:id="roomesWindowSearchBtn" mnemonicParsing="false" onAction="#showRoomInformation" prefHeight="35.0" prefWidth="120.0" styleClass="btn-primary" text="suchen">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
