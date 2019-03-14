@@ -1,3 +1,13 @@
+.root{
+	-fx-border-color: #900e18;
+    -fx-border-width: 0.4;
+}
+
+.border-small-darkgrey{
+	-fx-border-color: #2b2f32;
+    -fx-border-width: 0.4;
+}
+
 .bg-darkred{
 	-fx-background-color: #900e18;
 }

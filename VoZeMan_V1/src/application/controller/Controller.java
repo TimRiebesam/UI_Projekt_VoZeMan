@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import application.controller.menu.MenuController;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -43,12 +44,13 @@ public class Controller implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		try {
-			Pane menu = FXMLLoader.load(getClass().getResource("/application/view/menu/Menu.fxml"));
-			GridPane menuLeft = (GridPane)menu.getChildren().get(0);
-			GridPane menuTop = (GridPane)menu.getChildren().get(1);
+			FXMLLoader menu =new FXMLLoader(getClass().getResource("/application/view/menu/Menu.fxml"));
+			Pane menuPane = menu.load();
+			GridPane menuLeft = (GridPane)menuPane.getChildren().get(0);
+			GridPane menuTop = (GridPane)menuPane.getChildren().get(1);
 			mainGridPane.add(menuLeft, 0, 1);
 			mainGridPane.add(menuTop, 1, 0);
-			
+			((MenuController)menu.getController()).setStartMenu();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

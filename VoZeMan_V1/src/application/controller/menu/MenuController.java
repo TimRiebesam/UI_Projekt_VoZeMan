@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 
 import org.controlsfx.glyphfont.FontAwesome;
 
+import application.controller.mainContent.MensaController;
 import application.model.ModelHandler;
 import application.model.menu.Menu;
 import javafx.event.ActionEvent;
@@ -69,6 +70,13 @@ public class MenuController implements Initializable{
 	@FXML
 	private Label copyrightLabel;
 
+	FXMLLoader webLinks;
+	FXMLLoader notes; 
+	FXMLLoader roomes;
+	FXMLLoader mensa;
+	FXMLLoader lecturer;
+	FXMLLoader settings;
+	
 	Pane webLinksPane;
 	Pane notesPane; 
 	Pane roomesPane;
@@ -84,13 +92,20 @@ public class MenuController implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		try {
-			webLinksPane = FXMLLoader.load(getClass().getResource("/application/view/mainContent/WebLinks.fxml"));
-			notesPane = FXMLLoader.load(getClass().getResource("/application/view/mainContent/Notes.fxml"));
-			roomesPane = FXMLLoader.load(getClass().getResource("/application/view/mainContent/Roomes.fxml"));
-			mensaPane = FXMLLoader.load(getClass().getResource("/application/view/mainContent/Mensa.fxml"));
-			lecturerPane = FXMLLoader.load(getClass().getResource("/application/view/mainContent/Lecturer.fxml"));
-			settingsPane = FXMLLoader.load(getClass().getResource("/application/view/mainContent/Settings.fxml"));
-
+			webLinks = new FXMLLoader(getClass().getResource("/application/view/mainContent/WebLinks.fxml"));
+			notes = new FXMLLoader(getClass().getResource("/application/view/mainContent/Notes.fxml"));
+			roomes = new FXMLLoader(getClass().getResource("/application/view/mainContent/Roomes.fxml"));
+			mensa = new FXMLLoader(getClass().getResource("/application/view/mainContent/Mensa.fxml"));
+			lecturer = new FXMLLoader(getClass().getResource("/application/view/mainContent/Lecturer.fxml"));
+			settings = new FXMLLoader(getClass().getResource("/application/view/mainContent/Settings.fxml"));
+			
+			webLinksPane = webLinks.load();
+			notesPane = notes.load();
+			roomesPane = roomes.load();
+			mensaPane = mensa.load();
+			lecturerPane = lecturer.load();
+			settingsPane = settings.load();
+			
 			menuButtons.add(weblinksBtn);
 			menuButtons.add(notesBtn);
 			menuButtons.add(roomesBtn);
@@ -110,6 +125,12 @@ public class MenuController implements Initializable{
 		}
 	}
 	
+	public void setStartMenu() {
+		updateMainWindowAndMenu(getMainPaneFromMenuBtn(weblinksBtn), webLinksPane, weblinksBtn, raplaBtn);
+		menu.setCurrentController(webLinks.getController());
+		menu.getCurrentController();
+	}
+	
 	private void setControlBtns() {
 		Button minimizeBtn = new Button();
 		minimizeBtn.setGraphic(new FontAwesome().create(FontAwesome.Glyph.MINUS).color(Color.WHITE).size(18));
@@ -126,6 +147,12 @@ public class MenuController implements Initializable{
 		maximizeBtn.setOnAction((event) -> {
 			Stage stage = ((Stage)((Button)event.getSource()).getScene().getWindow());
 			stage.setMaximized(!stage.isMaximized());
+			if(stage.isMaximized()) {
+				maximizeBtn.setGraphic(new FontAwesome().create(FontAwesome.Glyph.COMPRESS).color(Color.WHITE).size(18));
+			}
+			else {
+				maximizeBtn.setGraphic(new FontAwesome().create(FontAwesome.Glyph.EXPAND).color(Color.WHITE).size(18));
+			}
 		});
 		
 		Button closeBtn = new Button();
@@ -162,20 +189,27 @@ public class MenuController implements Initializable{
 
 		if(source.equals(weblinksBtn)) {
 			updateMainWindowAndMenu(mainPane, webLinksPane, source, raplaBtn);
+			menu.setCurrentPane(webLinksPane);
 		}
 		else if (source.equals(notesBtn)) {
 			updateMainWindowAndMenu(mainPane, notesPane, source);
+			menu.setCurrentPane(notesPane);
 		}
 		else if (source.equals(roomesBtn)) {
 			updateMainWindowAndMenu(mainPane, roomesPane, source);
+			menu.setCurrentPane(roomesPane);
 		}
 		else if (source.equals(mensaBtn)) {
 			updateMainWindowAndMenu(mainPane, mensaPane, source);
+			menu.setCurrentPane(mensaPane);
+			((MensaController)mensa.getController()).loadMensaPlan();
 		}
 		else if (source.equals(lecturerBtn)) {
+			menu.setCurrentPane(lecturerPane);
 			updateMainWindowAndMenu(mainPane, lecturerPane, source);
 		}
 		else if (source.equals(settingsBtn)) {
+			menu.setCurrentPane(settingsPane);
 			updateMainWindowAndMenu(mainPane, settingsPane, source);
 		}
 		else if (source.equals(raplaBtn)) {
@@ -233,8 +267,12 @@ public class MenuController implements Initializable{
 		}
 	}
 
+	private GridPane getMainPaneFromMenuBtn(Button button) {
+		return (GridPane)button.getParent().getParent();
+	}
+	
 	private GridPane getMainPaneFromMenuBtnEvent(ActionEvent event) {
-		return (GridPane)((Button)event.getSource()).getParent().getParent();
+		return getMainPaneFromMenuBtn((Button)event.getSource());
 	}
 
 }

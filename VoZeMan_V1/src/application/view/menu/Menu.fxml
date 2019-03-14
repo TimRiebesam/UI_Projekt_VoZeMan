@@ -116,7 +116,6 @@
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="40.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="40.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="40.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="10.0" />
          </columnConstraints>
          <rowConstraints>
             <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="80.0" vgrow="SOMETIMES" />
@@ -149,19 +148,19 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Pane fx:id="paneForMinimize" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="5" GridPane.valignment="CENTER">
+            <Pane fx:id="paneForMinimize" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <GridPane.margin>
-                  <Insets top="15.0" />
+                  <Insets top="10.0" />
                </GridPane.margin>
             </Pane>
-            <Pane fx:id="paneForMaximize" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="6" GridPane.valignment="CENTER">
+            <Pane fx:id="paneForMaximize" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <GridPane.margin>
-                  <Insets top="15.0" />
+                  <Insets top="10.0" />
                </GridPane.margin>
             </Pane>
-            <Pane fx:id="paneForClose" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="7" GridPane.valignment="CENTER">
+            <Pane fx:id="paneForClose" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <GridPane.margin>
-                  <Insets top="15.0" />
+                  <Insets top="10.0" />
                </GridPane.margin>
             </Pane>
          </children>

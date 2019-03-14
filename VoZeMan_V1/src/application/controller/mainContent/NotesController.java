@@ -1,5 +1,7 @@
 package application.controller.mainContent;
 
-public class NotesController {
+
+public class NotesController  {
+
 
 }

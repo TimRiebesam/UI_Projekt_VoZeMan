@@ -25,6 +25,7 @@ public class Main extends Application {
 			Font.loadFont(getClass().getResourceAsStream("/application/view/font/FontAwesome-Regular"), 14);
 			
 			primaryStage.initStyle(StageStyle.TRANSPARENT);
+			
 			Controller controller = loader.getController();
 			controller.setPrimaryStage(primaryStage);
 			controller.activateMoveHandler();
@@ -32,7 +33,7 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("VoZeMan - DHBW Karlsruhe");
 			primaryStage.setMinHeight(600);
-			primaryStage.setMinWidth(800);
+			primaryStage.setMinWidth(900);
 			
 			ResizeHelper.addResizeListener(primaryStage);
 			
