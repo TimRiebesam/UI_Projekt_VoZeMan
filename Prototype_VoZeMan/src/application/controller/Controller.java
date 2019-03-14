@@ -1,8 +1,8 @@
 package application.controller;
 
 import java.util.ArrayList;
-import java.util.regex.Pattern;
 
+import application.Model.Lecturer;
 import application.Model.Service.HandleServicesService;
 import application.Model.Service.LecturererService;
 import application.Model.Service.MensaService;
@@ -13,6 +13,7 @@ import application.Model.Service.RoomesService;
 import application.Model.Service.SettingsService;
 import application.Model.Service.StageResizeService;
 import javafx.beans.value.ChangeListener;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -163,7 +164,6 @@ public class Controller {
     private Pane mainWindowForLecturerer;
     private Label lecturererPageLabel;
     private ComboBox<String> lecturererPageComboBox;
-    //private ObservableList<String> comboBoxItems;
     
 	
 	//Adding Services to Class (HandleServicesService to make other Services to an Singleton
@@ -185,13 +185,12 @@ public class Controller {
 
 	//Setting-Up Start-Up-Page
 	public void loadStartPage() {
-		checkMenuBtnList();
-		checkMenuSecondaryBtnList();
 		menuService.changeMenu(menuButtons, menuRapla, menuSecondaryButtons, menuSecondaryBtnOne);
-		
 		raplaService.show(mainPane, mainWindowForRapla, raplaWindowWebView);
-		
 		stageResizeService.resizeStage(primaryStage, mainPane, quickNotesPane, menuHeight, independentQuickNotesHeight);
+//		mainPane.getChildren().clear();
+//		mainPane.getChildren().add(mainWindowLabel);
+//		mainWindowLabel.setVisible(true);
 		notesService.updateNotesView(notesTitleTextField, notesTextArea, notesListview, notesWindowListView);
 	}
 	
@@ -242,6 +241,8 @@ public class Controller {
 	//Listening to Menu-Button clicks
 	@FXML
 	void changeMenu(ActionEvent event) {
+		checkMenuBtnList();
+		
 		Button target = ((Button)event.getTarget());
 		
 		menuService.changeMenu(menuButtons, target, menuSecondaryButtons, menuSecondaryBtnOne);
@@ -277,7 +278,7 @@ public class Controller {
 	@FXML
 	void changeSecondaryMenu(ActionEvent event) {
 		checkMenuSecondaryBtnList();
-		menuService.changeSecondaryMenu(menuSecondaryButtons, ((Button)event.getTarget()), menuService.getcurrentMenuOption(menuButtons));
+		menuService.changeSecondaryMenu(menuSecondaryButtons, ((Button)event.getTarget()));
 	}
 
 	@FXML
@@ -320,30 +321,5 @@ public class Controller {
 		settingsService.setRaplaUrl(raplaWindowTextField.getText());
 		raplaWindowTextField.setText("");
 	}
-	
-	
-	@FXML
-	void showRoomInformation (ActionEvent event) {
-		String roomname = roomesWindowSearchField.getText();
-		if (roomname.matches( "(^)([A-G]|[a-g])([0-5])([0-9])([0-9])($)") == true) {
-			char fluegel = roomname.charAt(0);
-			fluegel = Character.toUpperCase(fluegel);
-			char stockwerk = roomname.charAt(1);
-			String raumnummer = roomname.substring(2);
-			roomname = String.valueOf(fluegel)+stockwerk+raumnummer;
-			roomesWindowResultLabel.setText("Ihr gesuchter Raum "+roomname+" sollte sich im "+stockwerk+"ten. Stock des Gebäudeflügels "+fluegel+" befinden.");
-		} else {
-			roomesWindowResultLabel.setText("Ihr gesuchter Raum "+roomname+" erfüllt nicht das Suchpattern im Format [A-G][0-5][00-80]."); 
-		}
-	}
-	
-	
-	//Add Items to ComboBox Lecturerer
-	/*@FXML
-	void initzialize() {
-		lecturererPageComboBox.
-	
-	}*/
-	 
 
-}
+}//end of class

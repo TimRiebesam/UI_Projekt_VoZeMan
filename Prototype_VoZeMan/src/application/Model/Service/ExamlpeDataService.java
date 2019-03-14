@@ -26,8 +26,14 @@ public class ExamlpeDataService {
 				new SimpleDateFormat("dd.MM.yyyy hh:mm").parse("22.02.2019 14:43")
 				);
 		
+		
+		
+		
+		
 		HandleServicesService.getSettingsService().setRaplaUrl("https://rapla.dhbw-karlsruhe.de/rapla?page=calendar&user=brockmans&file=WWI17B1");
 			
 		}
+	
+	
 	
 }
