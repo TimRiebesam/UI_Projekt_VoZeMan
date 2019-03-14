@@ -17,7 +17,6 @@ public class Main extends Application {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/Window.fxml"));
 			Parent root = (Parent)loader.load();
-			root.setId("root");
 			
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("/application/view/css/style.css").toExternalForm());
@@ -26,7 +25,6 @@ public class Main extends Application {
 			Font.loadFont(getClass().getResourceAsStream("/application/view/font/FontAwesome-Regular"), 14);
 			
 			primaryStage.initStyle(StageStyle.TRANSPARENT);
-			
 			Controller controller = loader.getController();
 			controller.setPrimaryStage(primaryStage);
 			controller.activateMoveHandler();
@@ -35,6 +33,9 @@ public class Main extends Application {
 			primaryStage.setTitle("VoZeMan - DHBW Karlsruhe");
 			primaryStage.setMinHeight(600);
 			primaryStage.setMinWidth(800);
+			
+			ResizeHelper.addResizeListener(primaryStage);
+			
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
