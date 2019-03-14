@@ -1,0 +1,65 @@
+.bg-darkred{
+	-fx-background-color: #900e18;
+}
+
+.bg-red{
+	-fx-background-color: #b6121b;
+}
+
+.bg-lightred{
+	-fx-background-color: #e2001a;
+}
+
+.bg-lightgrey{
+	-fx-background-color: #cccdc8;
+}
+
+.bg-grey{
+	-fx-background-color: #5e6871;
+}
+
+.bg-darkgrey{
+	-fx-background-color: #2b2f32;
+}
+
+.icon-solid{
+	-fx-font-family: "Font Awesome 5 Free Solid";
+}
+
+.icon-regular{
+	-fx-font-family: "Font Awesome 5 Free Regular";
+}
+
+.menu-btn{
+	-fx-background-radius: 0;
+	-fx-text-fill: #ffffff;
+	-fx-font-size: 16pt;
+	-fx-font-family: "Century Gothic";
+}
+
+.menu-btn:hover{
+	-fx-background-color: #5e6871;
+}
+
+.menu-top-btn{
+	-fx-background-radius: 0;
+	-fx-text-fill: #ffffff;
+	-fx-font-size: 16pt;
+	-fx-font-family: "Century Gothic";
+}
+
+.menu-top-btn:hover{
+	-fx-underline: true;
+}
+
+.control-btn{
+	-fx-background-color: #900e18;
+}
+
+.control-btn:hover{
+	-fx-background-color: #b6121b;
+}
+
+.underline{
+	-fx-underline: true;
+}
