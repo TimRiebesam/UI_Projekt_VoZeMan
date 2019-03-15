@@ -73,3 +73,8 @@
 .underline{
 	-fx-underline: true;
 }
+
+.lable {
+	-fx-font-size: 12pt;
+	-fx-font-family: "Century Gothic";
+}

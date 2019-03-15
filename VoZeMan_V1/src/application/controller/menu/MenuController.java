@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import org.controlsfx.glyphfont.FontAwesome;
 
 import application.controller.mainContent.MensaController;
+import application.controller.mainContent.SettingsController;
 import application.model.ModelHandler;
 import application.model.menu.Menu;
 import javafx.event.ActionEvent;
@@ -205,12 +206,13 @@ public class MenuController implements Initializable{
 			((MensaController)mensa.getController()).loadMensaPlan();
 		}
 		else if (source.equals(lecturerBtn)) {
-			menu.setCurrentPane(lecturerPane);
 			updateMainWindowAndMenu(mainPane, lecturerPane, source);
+			menu.setCurrentPane(lecturerPane);
 		}
 		else if (source.equals(settingsBtn)) {
-			menu.setCurrentPane(settingsPane);
 			updateMainWindowAndMenu(mainPane, settingsPane, source);
+			menu.setCurrentPane(settingsPane);
+			
 		}
 		else if (source.equals(raplaBtn)) {
 			updateTopMenu(source);

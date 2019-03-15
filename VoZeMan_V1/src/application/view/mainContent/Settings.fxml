@@ -1,8 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</AnchorPane>
-
+<GridPane fx:id="gridPaneForSettings" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.mainContent.SettingsController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="535.0000305175781" minWidth="10.0" prefWidth="348.0000244140625" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="296.4000244140625" minWidth="10.0" prefWidth="144.7999755859375" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="245.59998168945313" minHeight="10.0" prefHeight="24.400001907348628" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="473.19999809265136" minHeight="10.0" prefHeight="473.19999809265136" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Button fx:id="saveRaplaLinkSettingButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.6" prefWidth="55.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+         <styleClass>
+            <String fx:value="buttonsInWindows" />
+            <String fx:value="bg-lightred" />
+         </styleClass>
+      </Button>
+      <TextField fx:id="enterRaplaLinkSettingsTextfield" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="25.6" prefWidth="348.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+      <Label prefHeight="18.0" prefWidth="400.0" styleClass="lable" text="Hier einen gültigen RAPLA-Link eintragen:" GridPane.halignment="LEFT">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </Label>
+   </children>
+   <padding>
+      <Insets left="5.0" />
+   </padding>
+</GridPane>
