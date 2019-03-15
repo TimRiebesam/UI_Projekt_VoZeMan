@@ -78,3 +78,10 @@
 	-fx-font-size: 12pt;
 	-fx-font-family: "Century Gothic";
 }
+
+.savedLabel {
+	-fx-font-size: 8pt;
+	-fx-font-family: "Century Gothic";
+	-fx-text-fill:green;
+	-fx-font-style:italic;
+}
