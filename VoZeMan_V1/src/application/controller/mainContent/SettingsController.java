@@ -55,6 +55,7 @@ public class SettingsController implements Initializable {
     private Label savedDualisLinkLabel;
     
     
+	Settings settings = new Settings();
 	
 
 	
@@ -86,8 +87,7 @@ public class SettingsController implements Initializable {
 	//Methode um RaplaLink zu speichern
 	@FXML
 	void saveRaplaLink(ActionEvent event) {
-		
-		
+		settings.setRaplaUrl(enterRaplaLinkSettingsTextfield.getText());
 		enterRaplaLinkSettingsTextfield.setText("");
 		savedRaplaLinkLabel.setVisible(true);
 	}
@@ -95,8 +95,7 @@ public class SettingsController implements Initializable {
 	//methode um moodle-Link zu speichern
 	@FXML
 	void saveMoodleLink(ActionEvent event) {
-		
-		
+		settings.setMoodleUrl(enterMoodleLinkSettingsTextfield.getText());
 		enterMoodleLinkSettingsTextfield.setText("");
 		savedMoodleLinkLabel.setVisible(true);
 
@@ -105,8 +104,7 @@ public class SettingsController implements Initializable {
 	//Methode um Dualis Link zu speichern
 	@FXML
 	void saveDualisLink(ActionEvent event) {
-		
-		
+		settings.setDualisUrl(enterDualisLinkSettingsTextfield.getText());		
 		enterDualisLinkSettingsTextfield.setText("");
 		savedDualisLinkLabel.setVisible(true);
 
