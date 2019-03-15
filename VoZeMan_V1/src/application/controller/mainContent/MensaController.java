@@ -37,6 +37,8 @@ public class MensaController implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		imageViewForMensa.fitHeightProperty().bind(gridPaneForMensa.heightProperty());
 		imageViewForMensa.fitWidthProperty().bind(gridPaneForMensa.widthProperty());
+		
+		imageViewForMensa.setImage(new Image("application/view/img/loader.gif"));
 	}
     
     public void loadMensaPlan() {
@@ -46,10 +48,7 @@ public class MensaController implements Initializable{
 	private void setMensaPlanAsync(ImageView imageViewForMensa) {
 		Thread setMensaPlan = new Thread(new Runnable() {
 			@Override
-			public void run() {
-				//TODO falsche position
-				imageViewForMensa.setImage(new Image("application/view/img/loading-loop.gif"));
-				
+			public void run() {				
 				Image mensaPlan = getMensaPlanForToday();
 				
 				Runnable updateImageView = new Runnable() {

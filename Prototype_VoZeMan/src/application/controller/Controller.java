@@ -278,7 +278,7 @@ public class Controller {
 	@FXML
 	void changeSecondaryMenu(ActionEvent event) {
 		checkMenuSecondaryBtnList();
-		menuService.changeSecondaryMenu(menuSecondaryButtons, ((Button)event.getTarget()));
+		//menuService.changeSecondaryMenu(menuSecondaryButtons, ((Button)event.getTarget()));
 	}
 
 	@FXML
