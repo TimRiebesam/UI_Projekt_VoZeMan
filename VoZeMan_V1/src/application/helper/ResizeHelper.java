@@ -1,4 +1,4 @@
-package application;
+package application.helper;
 
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;

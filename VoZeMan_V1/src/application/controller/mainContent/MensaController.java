@@ -10,15 +10,13 @@ import java.util.ResourceBundle;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 
+import application.helper.ImageHelper;
 import javafx.application.Platform;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.image.PixelReader;
-import javafx.scene.image.PixelWriter;
-import javafx.scene.image.WritableImage;
 import javafx.scene.layout.GridPane;
 
 public class MensaController implements Initializable{
@@ -31,7 +29,7 @@ public class MensaController implements Initializable{
     
     private Image mensaPlanForToday;
     
-    private static final int TOLERANCE_THRESHOLD = 0xFF;
+    private ImageHelper imageHelper = new ImageHelper();
     
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -89,40 +87,13 @@ public class MensaController implements Initializable{
 			
 			Image image = SwingFXUtils.toFXImage(croppedImage, null);
 		
-			return makeTransparent(image);
+			return imageHelper.makeTransparent(image);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
 		return null;
 	}
-	
-	private Image makeTransparent(Image inputImage) {
-        int W = (int) inputImage.getWidth();
-        int H = (int) inputImage.getHeight();
-        WritableImage outputImage = new WritableImage(W, H);
-        PixelReader reader = inputImage.getPixelReader();
-        PixelWriter writer = outputImage.getPixelWriter();
-        for (int y = 0; y < H; y++) {
-            for (int x = 0; x < W; x++) {
-                int argb = reader.getArgb(x, y);
-
-                int r = (argb >> 16) & 0xFF;
-                int g = (argb >> 8) & 0xFF;
-                int b = argb & 0xFF;
-
-                if (r >= TOLERANCE_THRESHOLD 
-                        && g >= TOLERANCE_THRESHOLD 
-                        && b >= TOLERANCE_THRESHOLD) {
-                    argb &= 0x00FFFFFF;
-                }
-
-                writer.setArgb(x, y, argb);
-            }
-        }
-
-        return outputImage;
-    }
 	
 	private String getDateInYearMonthDateFormat() {
 		return new SimpleDateFormat("yyyy-MM-dd").format(new Date());

@@ -1,6 +1,7 @@
 package application;
 
 import application.controller.Controller;
+import application.helper.ResizeHelper;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
