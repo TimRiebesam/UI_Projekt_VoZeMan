@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import application.controller.menu.MenuController;
+import application.model.ModelHandler;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -50,6 +51,9 @@ public class Controller implements Initializable{
 			GridPane menuTop = (GridPane)menuPane.getChildren().get(1);
 			mainGridPane.add(menuLeft, 0, 1);
 			mainGridPane.add(menuTop, 1, 0);
+			ModelHandler.getSettings().setDualisUrl("https://dualis.dhbw.de");
+			ModelHandler.getSettings().setMoodleUrl("https://moodle.dhbw.de/my/");
+			ModelHandler.getSettings().setRaplaUrl("https://rapla.dhbw-karlsruhe.de/rapla?page=calendar&user=brockmans&file=WWI17B1");
 			((MenuController)menu.getController()).setStartMenu();
 		} catch (IOException e) {
 			e.printStackTrace();

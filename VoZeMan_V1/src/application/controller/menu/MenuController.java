@@ -9,8 +9,10 @@ import java.util.ResourceBundle;
 import org.controlsfx.glyphfont.FontAwesome;
 
 import application.controller.mainContent.MensaController;
-import application.controller.mainContent.SettingsController;
+import application.controller.mainContent.WebLinksController;
 import application.model.ModelHandler;
+import application.model.main.Settings;
+import application.model.main.WebLinks;
 import application.model.menu.Menu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -86,6 +88,8 @@ public class MenuController implements Initializable{
 	Pane settingsPane;
 
 	Menu menu = ModelHandler.getMenu();
+	WebLinks webLinksModel = ModelHandler.getWebLinks();
+	Settings settingsModel = ModelHandler.getSettings();
 
 	List<Button> menuButtons = new ArrayList<Button>();
 	List<Button> menuTopButtons = new ArrayList<Button>();
@@ -127,9 +131,10 @@ public class MenuController implements Initializable{
 	}
 	
 	public void setStartMenu() {
-		updateMainWindowAndMenu(getMainPaneFromMenuBtn(weblinksBtn), webLinksPane, weblinksBtn, raplaBtn);
-		menu.setCurrentController(webLinks.getController());
-		menu.getCurrentController();
+		webLinksModel.setCurrentUrl(settingsModel.getRaplaUrl());
+		((WebLinksController)webLinks.getController()).loadPage();
+		updateMainWindowAndMenu(getMainPaneFromMenuBtn(weblinksBtn), webLinksPane, weblinksBtn, raplaBtn, webLinks.getController());
+		menu.setCurrentPane(webLinksPane);
 	}
 	
 	private void setControlBtns() {
@@ -189,43 +194,54 @@ public class MenuController implements Initializable{
 		}
 
 		if(source.equals(weblinksBtn)) {
-			updateMainWindowAndMenu(mainPane, webLinksPane, source, raplaBtn);
+			webLinksModel.setCurrentUrl(settingsModel.getRaplaUrl());
+			((WebLinksController)webLinks.getController()).loadPage();
+			updateMainWindowAndMenu(mainPane, webLinksPane, source, raplaBtn, webLinks.getController());
 			menu.setCurrentPane(webLinksPane);
 		}
 		else if (source.equals(notesBtn)) {
-			updateMainWindowAndMenu(mainPane, notesPane, source);
+			updateMainWindowAndMenu(mainPane, notesPane, source, notes.getController());
 			menu.setCurrentPane(notesPane);
 		}
 		else if (source.equals(roomesBtn)) {
-			updateMainWindowAndMenu(mainPane, roomesPane, source);
+			updateMainWindowAndMenu(mainPane, roomesPane, source, roomes.getController());
 			menu.setCurrentPane(roomesPane);
 		}
 		else if (source.equals(mensaBtn)) {
-			updateMainWindowAndMenu(mainPane, mensaPane, source);
+			updateMainWindowAndMenu(mainPane, mensaPane, source, mensa.getController());
 			menu.setCurrentPane(mensaPane);
 			((MensaController)mensa.getController()).loadMensaPlan();
 		}
 		else if (source.equals(lecturerBtn)) {
-			updateMainWindowAndMenu(mainPane, lecturerPane, source);
+			updateMainWindowAndMenu(mainPane, lecturerPane, source, lecturer.getController());
 			menu.setCurrentPane(lecturerPane);
 		}
 		else if (source.equals(settingsBtn)) {
-			updateMainWindowAndMenu(mainPane, settingsPane, source);
+			updateMainWindowAndMenu(mainPane, settingsPane, source, settings.getController());
 			menu.setCurrentPane(settingsPane);
 			
 		}
 		else if (source.equals(raplaBtn)) {
-			updateTopMenu(source);
+			webLinksModel.setCurrentUrl(settingsModel.getRaplaUrl());
+			((WebLinksController)webLinks.getController()).loadPage();
+			updateMainWindowAndMenu(mainPane, webLinksPane, weblinksBtn, source, webLinks.getController());
+			menu.setCurrentPane(webLinksPane);
 		}
 		else if (source.equals(moodleBtn)) {
-			updateTopMenu(source);
+			webLinksModel.setCurrentUrl(settingsModel.getMoodleUrl());
+			((WebLinksController)webLinks.getController()).loadPage();
+			updateMainWindowAndMenu(mainPane, webLinksPane, weblinksBtn, source, webLinks.getController());
+			menu.setCurrentPane(webLinksPane);
 		}
 		else if (source.equals(dualisBtn)) {
-			updateTopMenu(source);
+			webLinksModel.setCurrentUrl(settingsModel.getDualisUrl());
+			((WebLinksController)webLinks.getController()).loadPage();
+			updateMainWindowAndMenu(mainPane, webLinksPane, weblinksBtn, source, webLinks.getController());
+			menu.setCurrentPane(webLinksPane);
 		}		
 	}
 
-	private void updateMainWindowAndMenu(GridPane mainPane, Pane newContentPane, Button newMenuBtn, Button newTopMenuBtn) {
+	private void updateMainWindowAndMenu(GridPane mainPane, Pane newContentPane, Button newMenuBtn, Button newTopMenuBtn, Object newController) {
 		mainPane.add(newContentPane, 1, 1);
 
 		updateMenuButtons(newMenuBtn);
@@ -234,13 +250,10 @@ public class MenuController implements Initializable{
 		menu.setCurrentContent(newContentPane);
 		menu.setCurrentMainButton(newMenuBtn);
 		menu.setCurrentTopButton(newTopMenuBtn);
+		menu.setCurrentController(newController);
 	}
 
-	private void updateTopMenu(Button newTopMenuBtn) {
-		updateMenuTopButtons(newTopMenuBtn);
-	}
-
-	private void updateMainWindowAndMenu(GridPane mainPane, Pane newContentPane, Button newMenuBtn) {
+	private void updateMainWindowAndMenu(GridPane mainPane, Pane newContentPane, Button newMenuBtn, Object newController) {
 		mainPane.add(newContentPane, 1, 1);
 
 		updateMenuButtons(newMenuBtn);
@@ -249,6 +262,7 @@ public class MenuController implements Initializable{
 		menu.setCurrentContent(newContentPane);
 		menu.setCurrentMainButton(newMenuBtn);
 		menu.setCurrentTopButton(null);
+		menu.setCurrentController(newController);
 	}
 
 	private void updateMenuButtons(Button btn) {

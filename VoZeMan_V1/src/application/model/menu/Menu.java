@@ -1,6 +1,5 @@
 package application.model.menu;
 
-import application.controller.Controller;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 
@@ -10,7 +9,7 @@ public class Menu {
 	private Button currentTopButton;
 	private Object currentContent;
 	private Pane currentPane;
-	private Controller currentController;
+	private Object currentController;
 
 	public Button getCurrentMainButton() {
 		return currentMainButton;
@@ -36,10 +35,10 @@ public class Menu {
 	public void setCurrentPane(Pane currentPane) {
 		this.currentPane = currentPane;
 	}
-	public Controller getCurrentController() {
+	public Object getCurrentController() {
 		return currentController;
 	}
-	public void setCurrentController(Controller currentController) {
+	public void setCurrentController(Object currentController) {
 		this.currentController = currentController;
 	}
 	
