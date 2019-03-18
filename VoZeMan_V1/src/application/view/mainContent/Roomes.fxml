@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane fx:id="gridPaneForRoomes" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="application.controller.mainContent.RoomesController">
+<GridPane fx:id="gridPaneForRoomes" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.mainContent.RoomesController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="440.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="140.0" />
@@ -21,7 +21,7 @@
     <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="300.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <TextField fx:id="textfieldForRoomes" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="40.0" onAction="#onEnter" />
+      <TextField fx:id="textfieldForRoomes" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" onAction="#onEnter" prefHeight="40.0" promptText="Raumnummer z.B. A345" />
       <Button fx:id="searchBtnForRoomes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#searchForRoom" prefHeight="40.0" prefWidth="130.0" text="suchen" GridPane.columnIndex="1">
          <GridPane.margin>
             <Insets left="10.0" />
@@ -31,7 +31,10 @@
             <String fx:value="menu-btn" />
          </styleClass>
       </Button>
-      <Label fx:id="searchLabelForRoomes" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="10.0" prefHeight="40.0" prefWidth="600.0" styleClass="label-settings" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+      <Label fx:id="searchLabelForRoomes" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="10.0" prefHeight="40.0" prefWidth="600.0" styleClass="label-settings" GridPane.columnSpan="2" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin></Label>
       <Label fx:id="labelForImageResizingForRoomes" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnSpan="2" GridPane.rowIndex="2" />
       <ImageView fx:id="imageViewForRoomes" fitHeight="300.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
    </children>
