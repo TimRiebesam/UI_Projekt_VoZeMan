@@ -74,7 +74,7 @@
 	-fx-underline: true;
 }
 
-.label {
+.label-settings {
 	-fx-font-size: 12pt;
 	-fx-font-family: "Century Gothic";
 }

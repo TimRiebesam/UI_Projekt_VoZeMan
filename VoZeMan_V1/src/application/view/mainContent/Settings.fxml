@@ -32,13 +32,13 @@
          </styleClass>
       </Button>
       <TextField fx:id="enterRaplaLinkSettingsTextfield" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="25.6" prefWidth="348.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
-      <Label fx:id="raplaLinkSettingsLabel" prefHeight="18.0" prefWidth="400.0" text="Hier einen gültigen RAPLA-Link eintragen:" GridPane.halignment="LEFT">
+      <Label fx:id="raplaLinkSettingsLabel" prefHeight="18.0" prefWidth="400.0" styleClass="label-settings" text="Hier einen gültigen RAPLA-Link eintragen:" GridPane.halignment="LEFT">
          <GridPane.margin>
             <Insets />
          </GridPane.margin>
       </Label>
-      <Label fx:id="moodleLinkSettingsLabel" prefHeight="18.0" prefWidth="400.0" text="Hier einen gültigen moodle-Link eintragen:" GridPane.rowIndex="2" />
-      <Label fx:id="dualisLinkSettingsLabel" prefHeight="18.0" prefWidth="400.0" text="Hier einen gültigen Dualis-Link eintragen:" GridPane.rowIndex="4" />
+      <Label fx:id="moodleLinkSettingsLabel" prefHeight="18.0" prefWidth="400.0" styleClass="label-settings" text="Hier einen gültigen moodle-Link eintragen:" GridPane.rowIndex="2" />
+      <Label fx:id="dualisLinkSettingsLabel" prefHeight="18.0" prefWidth="400.0" styleClass="label-settings" text="Hier einen gültigen Dualis-Link eintragen:" GridPane.rowIndex="4" />
       <TextField fx:id="enterMoodleLinkSettingsTextfield" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="25.6" prefWidth="348.0" GridPane.rowIndex="3" />
       <TextField fx:id="enterDualisLinkSettingsTextfield" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="25.6" prefWidth="348.0" GridPane.rowIndex="5" />
       <Button fx:id="saveMoodleLinkSettingButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveMoodleLink" prefHeight="24.0" prefWidth="55.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
