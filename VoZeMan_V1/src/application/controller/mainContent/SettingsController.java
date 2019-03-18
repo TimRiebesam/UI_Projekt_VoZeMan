@@ -1,11 +1,7 @@
 package application.controller.mainContent;
 
-import java.awt.Desktop.Action;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Handler;
-
-import javax.swing.text.AttributeSet.FontAttribute;
 
 import org.controlsfx.glyphfont.FontAwesome;
 

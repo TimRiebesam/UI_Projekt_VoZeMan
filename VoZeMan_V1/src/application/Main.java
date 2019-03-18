@@ -7,7 +7,6 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.text.Font;
 
 
 public class Main extends Application {
@@ -20,9 +19,6 @@ public class Main extends Application {
 			
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("/application/view/css/style.css").toExternalForm());
-			
-			Font.loadFont(getClass().getResourceAsStream("/application/view/font/FontAwesome-Solid"), 14);
-			Font.loadFont(getClass().getResourceAsStream("/application/view/font/FontAwesome-Regular"), 14);
 			
 			primaryStage.initStyle(StageStyle.TRANSPARENT);
 			
