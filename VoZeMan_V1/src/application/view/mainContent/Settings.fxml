@@ -16,12 +16,12 @@
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="296.4000244140625" minWidth="10.0" prefWidth="82.79998779296875" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="245.59998168945313" minHeight="10.0" prefHeight="36.79999198913575" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="473.19999809265136" minHeight="0.0" prefHeight="44.00000801086426" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="473.19999809265136" minHeight="0.0" prefHeight="34.2000244140625" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="473.19999809265136" minHeight="10.0" prefHeight="47.79997558593749" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="473.19999809265136" minHeight="10.0" prefHeight="40.600006103515625" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="473.19999809265136" minHeight="10.0" prefHeight="35.39997558593751" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="44.0" minHeight="0.0" prefHeight="44.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="38.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="473.19999809265136" minHeight="10.0" prefHeight="293.0000244140625" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
@@ -31,31 +31,31 @@
             <String fx:value="bg-lightred" />
          </styleClass>
       </Button>
-      <TextField fx:id="enterRaplaLinkSettingsTextfield" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="25.6" prefWidth="348.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+      <TextField fx:id="enterRaplaLinkSettingsTextfield" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="25.6" prefWidth="348.0" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP" />
       <Label fx:id="raplaLinkSettingsLabel" prefHeight="18.0" prefWidth="400.0" styleClass="label-settings" text="Hier einen gültigen RAPLA-Link eintragen:" GridPane.halignment="LEFT">
          <GridPane.margin>
             <Insets />
          </GridPane.margin>
       </Label>
-      <Label fx:id="moodleLinkSettingsLabel" prefHeight="18.0" prefWidth="400.0" styleClass="label-settings" text="Hier einen gültigen moodle-Link eintragen:" GridPane.rowIndex="2" />
-      <Label fx:id="dualisLinkSettingsLabel" prefHeight="18.0" prefWidth="400.0" styleClass="label-settings" text="Hier einen gültigen Dualis-Link eintragen:" GridPane.rowIndex="4" />
-      <TextField fx:id="enterMoodleLinkSettingsTextfield" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="25.6" prefWidth="348.0" GridPane.rowIndex="3" />
-      <TextField fx:id="enterDualisLinkSettingsTextfield" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="25.6" prefWidth="348.0" GridPane.rowIndex="5" />
-      <Button fx:id="saveMoodleLinkSettingButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveMoodleLink" prefHeight="24.0" prefWidth="55.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <Label fx:id="moodleLinkSettingsLabel" prefHeight="18.0" prefWidth="400.0" styleClass="label-settings" text="Hier einen gültigen moodle-Link eintragen:" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+      <Label fx:id="dualisLinkSettingsLabel" prefHeight="18.0" prefWidth="400.0" styleClass="label-settings" text="Hier einen gültigen Dualis-Link eintragen:" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
+      <TextField fx:id="enterMoodleLinkSettingsTextfield" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="25.6" prefWidth="348.0" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+      <TextField fx:id="enterDualisLinkSettingsTextfield" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="25.6" prefWidth="348.0" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+      <Button fx:id="saveMoodleLinkSettingButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveMoodleLink" prefHeight="24.0" prefWidth="55.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="TOP">
          <styleClass>
             <String fx:value="buttonsInWindows" />
             <String fx:value="bg-lightred" />
          </styleClass>
       </Button>
-      <Button fx:id="saveDualisLinkSettingsButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveDualisLink" prefHeight="24.0" prefWidth="55.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+      <Button fx:id="saveDualisLinkSettingsButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveDualisLink" prefHeight="24.0" prefWidth="55.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="TOP">
          <styleClass>
             <String fx:value="buttonsInWindows" />
             <String fx:value="bg-lightred" />
          </styleClass>
       </Button>
       <Label fx:id="savedRaplaLinkLabel" prefHeight="25.0" prefWidth="50.0" styleClass="savedLabel" text="saved!" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP" />
-      <Label fx:id="savedMoodleLinkLabel" prefHeight="25.0" prefWidth="50.0" styleClass="savedLabel" text="saved!" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-      <Label fx:id="savedDualisLinkLabel" prefHeight="25.0" prefWidth="50.0" styleClass="savedLabel" text="saved!" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <Label fx:id="savedMoodleLinkLabel" prefHeight="25.0" prefWidth="50.0" styleClass="savedLabel" text="saved!" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+      <Label fx:id="savedDualisLinkLabel" prefHeight="25.0" prefWidth="50.0" styleClass="savedLabel" text="saved!" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="TOP" />
    </children>
    <padding>
       <Insets left="5.0" />
