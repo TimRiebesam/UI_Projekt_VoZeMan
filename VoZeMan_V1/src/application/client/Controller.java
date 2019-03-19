@@ -51,9 +51,10 @@ public class Controller implements Initializable{
 			GridPane menuTop = (GridPane)menuPane.getChildren().get(1);
 			mainGridPane.add(menuLeft, 0, 1);
 			mainGridPane.add(menuTop, 1, 0);
-			((MenuController)menu.getController()).setStartMenu();
 			
 			DefaultDataLoader.loadDefaultData();
+			
+			((MenuController)menu.getController()).setStartMenu();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
