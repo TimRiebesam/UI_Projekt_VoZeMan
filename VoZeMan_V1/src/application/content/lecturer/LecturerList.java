@@ -14,7 +14,7 @@ private ObservableList<Lecturer> lecturers = FXCollections.observableArrayList()
 	public ObservableList<String> getLecturerersAsStringList() {
 		ObservableList<String> lecturersAsStringList = FXCollections.observableArrayList();
 		lecturers.forEach(lecturer -> {
-			lecturersAsStringList.add(lecturer.getAddress() + " " + lecturer.getTitle() + " " + lecturer.getName());
+			lecturersAsStringList.add(lecturer.getTitle() + " " + lecturer.getName());
 		});
 		return lecturersAsStringList;
 	}
@@ -26,5 +26,9 @@ private ObservableList<Lecturer> lecturers = FXCollections.observableArrayList()
 	public int size() {
 		return lecturers.size();
 	}
+
+
+	
+
 	
 }

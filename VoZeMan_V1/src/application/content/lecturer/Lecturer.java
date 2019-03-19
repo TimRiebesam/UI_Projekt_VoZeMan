@@ -7,6 +7,14 @@ public class Lecturer {
 	private String title;
 	private String email;
 	
+	public Lecturer(String name, String address, String title, String email) {
+		super();
+		this.name = name;
+		this.address = address;
+		this.title = title;
+		this.email = email;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -39,12 +47,6 @@ public class Lecturer {
 		this.email = email;
 	}
 
-	public Lecturer(String name, String address, String title, String email) {
-		super();
-		this.name = name;
-		this.address = address;
-		this.title = title;
-		this.email = email;
-	}
+
 	
 }

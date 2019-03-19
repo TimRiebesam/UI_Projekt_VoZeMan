@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 
 import org.controlsfx.glyphfont.FontAwesome;
 
+import application.content.lecturer.LecturererController;
 import application.content.mensa.MensaController;
 import application.content.settings.Settings;
 import application.content.weblinks.WebLinks;
@@ -216,6 +217,7 @@ public class MenuController implements Initializable{
 		else if (source.equals(lecturerBtn)) {
 			updateMainWindowAndMenu(mainPane, lecturerPane, source, lecturer.getController());
 			menu.setCurrentPane(lecturerPane);
+			((LecturererController)lecturer.getController()).load();
 		}
 		else if (source.equals(settingsBtn)) {
 			updateMainWindowAndMenu(mainPane, settingsPane, source, settings.getController());
