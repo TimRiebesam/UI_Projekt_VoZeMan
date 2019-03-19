@@ -132,6 +132,7 @@ public class MenuController implements Initializable{
 	
 	public void setStartMenu() {
 		webLinksModel.setCurrentUrl(settingsModel.getRaplaUrl());
+		webLinksModel.setCurrentPageTitle("Rapla - DHBW VozeMan");
 		((WebLinksController)webLinks.getController()).loadPage();
 		updateMainWindowAndMenu(getMainPaneFromMenuBtn(weblinksBtn), webLinksPane, weblinksBtn, raplaBtn, webLinks.getController());
 		menu.setCurrentPane(webLinksPane);
@@ -195,6 +196,7 @@ public class MenuController implements Initializable{
 
 		if(source.equals(weblinksBtn)) {
 			webLinksModel.setCurrentUrl(settingsModel.getRaplaUrl());
+			webLinksModel.setCurrentPageTitle("Rapla - DHBW VozeMan");
 			((WebLinksController)webLinks.getController()).loadPage();
 			updateMainWindowAndMenu(mainPane, webLinksPane, source, raplaBtn, webLinks.getController());
 			menu.setCurrentPane(webLinksPane);
@@ -223,18 +225,21 @@ public class MenuController implements Initializable{
 		}
 		else if (source.equals(raplaBtn)) {
 			webLinksModel.setCurrentUrl(settingsModel.getRaplaUrl());
+			webLinksModel.setCurrentPageTitle("Rapla - DHBW VozeMan");
 			((WebLinksController)webLinks.getController()).loadPage();
 			updateMainWindowAndMenu(mainPane, webLinksPane, weblinksBtn, source, webLinks.getController());
 			menu.setCurrentPane(webLinksPane);
 		}
 		else if (source.equals(moodleBtn)) {
 			webLinksModel.setCurrentUrl(settingsModel.getMoodleUrl());
+			webLinksModel.setCurrentPageTitle("Moodle - DHBW VozeMan");
 			((WebLinksController)webLinks.getController()).loadPage();
 			updateMainWindowAndMenu(mainPane, webLinksPane, weblinksBtn, source, webLinks.getController());
 			menu.setCurrentPane(webLinksPane);
 		}
 		else if (source.equals(dualisBtn)) {
 			webLinksModel.setCurrentUrl(settingsModel.getDualisUrl());
+			webLinksModel.setCurrentPageTitle("Dualis - DHBW VozeMan");
 			((WebLinksController)webLinks.getController()).loadPage();
 			updateMainWindowAndMenu(mainPane, webLinksPane, weblinksBtn, source, webLinks.getController());
 			menu.setCurrentPane(webLinksPane);

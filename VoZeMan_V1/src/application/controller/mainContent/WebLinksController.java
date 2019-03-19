@@ -7,6 +7,7 @@ import application.model.ModelHandler;
 import application.model.main.WebLinks;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
@@ -19,7 +20,10 @@ public class WebLinksController implements Initializable {
     @FXML
     private WebView webViewForWebLinks;
     
-    private WebLinks WebLinks = ModelHandler.getWebLinks();
+    @FXML
+    private Label labelForWebPageTitleForWebLinks;
+    
+    private WebLinks webLinks = ModelHandler.getWebLinks();
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -27,8 +31,9 @@ public class WebLinksController implements Initializable {
 	}
     
     public void loadPage() {
+    	labelForWebPageTitleForWebLinks.setText(webLinks.getCurrentPageTitle());
     	WebEngine webEngineForWebLinks = webViewForWebLinks.getEngine();
-    	webEngineForWebLinks.load(WebLinks.getCurrentUrl());
+    	webEngineForWebLinks.load(webLinks.getCurrentUrl());
     }
 	
 }
