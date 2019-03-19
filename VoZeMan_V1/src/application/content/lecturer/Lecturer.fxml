@@ -18,12 +18,12 @@
       <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="193.60000610351562" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="167.0" text="Dozent auswählen:" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+      <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="167.0" styleClass="window-lecturer" text="Dozent auswählen:" GridPane.halignment="LEFT" GridPane.valignment="TOP">
          <padding>
             <Insets left="5.0" top="5.0" />
          </padding>
       </Label>
-      <ComboBox fx:id="selectLecturerComboBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#eventComboBox" prefHeight="33.0" prefWidth="258.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="TOP" />
-      <TextArea fx:id="showLecturerTextArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="342.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+      <ComboBox fx:id="selectLecturerComboBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#eventComboBox" prefHeight="34.0" prefWidth="341.0" styleClass="window-lecturer" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="TOP" />
+      <TextArea fx:id="showLecturerTextArea" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="342.0" styleClass="window-lecturer" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP" />
    </children>
 </GridPane>

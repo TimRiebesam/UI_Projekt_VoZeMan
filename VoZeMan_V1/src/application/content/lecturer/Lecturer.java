@@ -7,6 +7,11 @@ public class Lecturer {
 	private String title;
 	private String email;
 	
+	
+	public Lecturer() {
+		
+	}
+	
 	public Lecturer(String name, String address, String title, String email) {
 		super();
 		this.name = name;
@@ -45,6 +50,14 @@ public class Lecturer {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public String toString() {
+		
+		return "Titel: " + this.getTitle() + "\n" +
+				"Name: " + this.getName()+ "\n" +
+				"E-Mail: " + this.getEmail()+ "\n" +
+				"Adresse: " + this.getAddress();
 	}
 
 

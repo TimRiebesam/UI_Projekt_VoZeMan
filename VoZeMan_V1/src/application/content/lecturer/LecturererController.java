@@ -49,9 +49,19 @@ public class LecturererController implements Initializable {
 	}
 	
 	private void showLecturerInformation() {
-		showLecturerTextArea.setText(showLecturerTextArea.getText()+ "\n" + selectLecturerComboBox.getSelectionModel().getSelectedItem());
+		Lecturer lecturer = new Lecturer();
+		for(int i = 0; i < lecturerList.size(); i++) {
+			if (selectLecturerComboBox.getSelectionModel().getSelectedItem().toString() == lecturerList.getLecturer(i).getName()){
+				lecturer.setTitle(lecturerList.getLecturer(i).getTitle());
+				lecturer.setName(lecturerList.getLecturer(i).getName());
+				lecturer.setAddress(lecturerList.getLecturer(i).getAddress());
+				lecturer.setEmail(lecturerList.getLecturer(i).getEmail());
+			}		
+		}
+		showLecturerTextArea.setText(lecturer.toString());
 		
 	}
+
 	
 	@FXML
 	public void eventComboBox(ActionEvent event) {
