@@ -5,6 +5,7 @@ import java.util.ResourceBundle;
 
 import org.controlsfx.glyphfont.FontAwesome;
 
+import application.model.ModelHandler;
 import application.model.main.Settings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -51,7 +52,7 @@ public class SettingsController implements Initializable {
     private Label savedDualisLinkLabel;
     
     
-	Settings settings = new Settings();
+	Settings settings = ModelHandler.getSettings();
 	
 
 	
