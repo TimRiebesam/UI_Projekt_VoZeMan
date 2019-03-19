@@ -31,22 +31,17 @@ public class LecturererController implements Initializable {
 	private TextArea showLecturerTextArea;
 	
 	private LecturerList lecturerList = ModelHandler.getLecturerList();
-	
-	
-	
-	
-	
+
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		selectLecturerComboBox.setItems(lecturerList.getLecturerersAsStringList());
-		
-	
 	}
 	
 	public void load() {
 		selectLecturerComboBox.setItems(lecturerList.getLecturerersAsStringList());
 	}
+	
 	
 	private void showLecturerInformation() {
 		Lecturer lecturer = new Lecturer();
@@ -58,8 +53,7 @@ public class LecturererController implements Initializable {
 				lecturer.setEmail(lecturerList.getLecturer(i).getEmail());
 			}		
 		}
-		showLecturerTextArea.setText(lecturer.toString());
-		
+		showLecturerTextArea.setText(lecturer.toString());	
 	}
 
 	
