@@ -53,7 +53,6 @@ public class Lecturer {
 	}
 	
 	public String toString() {
-		
 		return "Titel: " + this.getTitle() + "\n" +
 				"Name: " + this.getName()+ "\n" +
 				"E-Mail: " + this.getEmail()+ "\n" +

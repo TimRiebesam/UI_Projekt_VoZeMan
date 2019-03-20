@@ -36,6 +36,7 @@ public class LecturererController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		selectLecturerComboBox.setItems(lecturerList.getLecturerersAsStringList());
+		showLecturerTextArea.setText("Informationen über deine Dozenten...");
 	}
 	
 	public void load() {
