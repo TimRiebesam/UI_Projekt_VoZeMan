@@ -47,7 +47,7 @@ public class LecturererController implements Initializable {
 	private void showLecturerInformation() {
 		Lecturer lecturer = new Lecturer();
 		for(int i = 0; i < lecturerList.size(); i++) {
-			if (selectLecturerComboBox.getSelectionModel().getSelectedItem().toString() == lecturerList.getLecturer(i).getName()){
+			if (selectLecturerComboBox.getSelectionModel().getSelectedItem().toString().equals(lecturerList.getLecturer(i).getName())){
 				lecturer.setTitle(lecturerList.getLecturer(i).getTitle());
 				lecturer.setName(lecturerList.getLecturer(i).getName());
 				lecturer.setAddress(lecturerList.getLecturer(i).getAddress());
