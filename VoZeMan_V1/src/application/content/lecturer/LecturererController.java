@@ -3,11 +3,7 @@ package application.content.lecturer;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javax.jws.WebParam.Mode;
-
 import application.helper.ModelHandler;
-import javafx.collections.ObservableList;
-import javafx.collections.ObservableSet;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -46,14 +42,24 @@ public class LecturererController implements Initializable {
 	
 	private void showLecturerInformation() {
 		Lecturer lecturer = new Lecturer();
-		for(int i = 0; i < lecturerList.size(); i++) {
-			if (selectLecturerComboBox.getSelectionModel().getSelectedItem().toString().equals(lecturerList.getLecturer(i).getName())){
-				lecturer.setTitle(lecturerList.getLecturer(i).getTitle());
-				lecturer.setName(lecturerList.getLecturer(i).getName());
-				lecturer.setAddress(lecturerList.getLecturer(i).getAddress());
-				lecturer.setEmail(lecturerList.getLecturer(i).getEmail());
-			}		
+		
+		//Schönere Alternative:
+		if(selectLecturerComboBox.getSelectionModel().getSelectedIndex() != -1) {
+			lecturer = lecturerList.getLecturer(selectLecturerComboBox.getSelectionModel().getSelectedIndex());
 		}
+		
+		//Falls du trotzdem die forSchleife verwenden möchtest (nicht so gut, angenommen sehr lange Liste müssen alle durchgegangen werden, oben nur genau ein index aufgerufen)
+		//Außerdem brauchst du vor der for-Schleife noch "if(selectLecturerComboBox.getSelectionModel().getSelectedItem() != -1)" (Prüft ob überhaupt ein Index ausgewählt ist. load Methode macht nämlich einen Reset der Auswahl daher auch die Exception)
+		
+//		for(int i = 0; i <= lecturerList.size(); i++) {
+//			if (selectLecturerComboBox.getSelectionModel().getSelectedItem().toString().equals(lecturerList.getLecturer(i).getName())){
+//				lecturer.setTitle(lecturerList.getLecturer(i).getTitle());
+//				lecturer.setName(lecturerList.getLecturer(i).getName());
+//				lecturer.setAddress(lecturerList.getLecturer(i).getAddress());
+//				lecturer.setEmail(lecturerList.getLecturer(i).getEmail());
+//			}		
+//		}
+		
 		showLecturerTextArea.setText(lecturer.toString());	
 	}
 

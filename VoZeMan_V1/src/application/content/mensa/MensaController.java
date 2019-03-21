@@ -15,17 +15,24 @@ import javafx.application.Platform;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
 public class MensaController implements Initializable{
 
-    @FXML
+	@FXML
     private GridPane gridPaneForMensa;
 
     @FXML
-    private ImageView imageViewForMensa;
+    private ImageView imageViewForMensaBackground;
+
+    @FXML
+    private Label labelForMensaMenu;
+
+    @FXML
+    private ImageView imageViewForMensaMenu;
     
     private Image mensaPlanForToday;
     
@@ -33,14 +40,17 @@ public class MensaController implements Initializable{
     
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		imageViewForMensa.fitHeightProperty().bind(gridPaneForMensa.heightProperty());
-		imageViewForMensa.fitWidthProperty().bind(gridPaneForMensa.widthProperty());
+		imageViewForMensaMenu.fitHeightProperty().bind(labelForMensaMenu.heightProperty());
+		imageViewForMensaMenu.fitWidthProperty().bind(labelForMensaMenu.widthProperty());
 		
-		imageViewForMensa.setImage(new Image("application/img/loader.gif"));
+		imageViewForMensaBackground.fitHeightProperty().bind(gridPaneForMensa.heightProperty());
+		imageViewForMensaBackground.fitWidthProperty().bind(gridPaneForMensa.widthProperty());
+		
+		imageViewForMensaMenu.setImage(new Image("application/img/loader.gif"));
 	}
     
     public void loadMensaPlan() {
-    	setMensaPlanAsync(imageViewForMensa);
+    	setMensaPlanAsync(imageViewForMensaMenu);
     }
     
 	private void setMensaPlanAsync(ImageView imageViewForMensa) {
