@@ -185,6 +185,8 @@ public class Controller {
 
 	//Setting-Up Start-Up-Page
 	public void loadStartPage() {
+		checkMenuBtnList();
+		checkMenuSecondaryBtnList();
 		menuService.changeMenu(menuButtons, menuRapla, menuSecondaryButtons, menuSecondaryBtnOne);
 		raplaService.show(mainPane, mainWindowForRapla, raplaWindowWebView);
 		stageResizeService.resizeStage(primaryStage, mainPane, quickNotesPane, menuHeight, independentQuickNotesHeight);
