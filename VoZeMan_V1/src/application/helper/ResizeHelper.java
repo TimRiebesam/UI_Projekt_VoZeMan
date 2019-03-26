@@ -1,17 +1,80 @@
 package application.helper;
 
+import org.controlsfx.glyphfont.FontAwesome;
+
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 //created by Alexander Berg
 public class ResizeHelper {
+	
+	private static boolean isMax = false;
+	private static double stageX;
+	private static double stageY;
+	private static double stageWidth;
+	private static double stageHeight;
+	
+	private static Button maximizeBtn;
+	
+	private static Button getMaximizeBtn(Stage stage) {
+		if(maximizeBtn == null) {
+			maximizeBtn = (Button)stage.getScene().lookup("#maximizeBtn");
+		}
+		return maximizeBtn;
+	}
+	
+	public static void changeMaximize(Stage stage) {
+		if(!isMax) {
+			isMax = !isMax;
+			
+			stageX = stage.getX();
+			stageY = stage.getY();
+			stageWidth = stage.getWidth();
+			stageHeight = stage.getHeight();
+			
+			Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
+	    	stage.setX(primaryScreenBounds.getMinX());
+	    	stage.setY(primaryScreenBounds.getMinY());
+
+	    	stage.setMaxWidth(primaryScreenBounds.getWidth());
+	    	stage.setMinWidth(primaryScreenBounds.getWidth());
+
+	    	stage.setMaxHeight(primaryScreenBounds.getHeight());
+	    	stage.setMinHeight(primaryScreenBounds.getHeight());
+	    	
+	    	getMaximizeBtn(stage).setGraphic(new FontAwesome().create(FontAwesome.Glyph.COMPRESS).color(Color.WHITE).size(18));
+		}
+		
+		else {
+			isMax = !isMax;
+			
+			stage.setX(stageX);
+	    	stage.setY(stageY);
+
+	    	stage.setMaxWidth(stageWidth);
+	    	stage.setMinWidth(stageWidth);
+
+	    	stage.setMaxHeight(stageHeight);
+	    	stage.setMinHeight(stageHeight);
+	    	
+			getMaximizeBtn(stage).setGraphic(new FontAwesome().create(FontAwesome.Glyph.EXPAND).color(Color.WHITE).size(18));
+		}
+	}
+	
+	public static boolean isMaximized() {
+		return isMax;
+	}
 
     public static void addResizeListener(Stage stage) {
         ResizeListener resizeListener = new ResizeListener(stage);

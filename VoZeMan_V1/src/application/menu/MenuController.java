@@ -14,6 +14,7 @@ import application.content.settings.Settings;
 import application.content.weblinks.WebLinks;
 import application.content.weblinks.WebLinksController;
 import application.helper.ModelHandler;
+import application.helper.ResizeHelper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -148,18 +149,13 @@ public class MenuController implements Initializable{
 		});
 		
 		Button maximizeBtn = new Button();
+		maximizeBtn.setId("maximizeBtn");
 		maximizeBtn.setGraphic(new FontAwesome().create(FontAwesome.Glyph.EXPAND).color(Color.WHITE).size(18));
 		maximizeBtn.getStyleClass().add("control-btn");
 		maximizeBtn.setCursor(Cursor.HAND);
 		maximizeBtn.setOnAction((event) -> {
 			Stage stage = ((Stage)((Button)event.getSource()).getScene().getWindow());
-			stage.setMaximized(!stage.isMaximized());
-			if(stage.isMaximized()) {
-				maximizeBtn.setGraphic(new FontAwesome().create(FontAwesome.Glyph.COMPRESS).color(Color.WHITE).size(18));
-			}
-			else {
-				maximizeBtn.setGraphic(new FontAwesome().create(FontAwesome.Glyph.EXPAND).color(Color.WHITE).size(18));
-			}
+			ResizeHelper.changeMaximize(stage);
 		});
 		
 		Button closeBtn = new Button();

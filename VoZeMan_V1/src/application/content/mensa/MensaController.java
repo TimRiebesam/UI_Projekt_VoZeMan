@@ -30,6 +30,9 @@ public class MensaController implements Initializable{
 
     @FXML
     private Label labelForMensaMenu;
+    
+    @FXML
+    private Label labelForImageResizing;
 
     @FXML
     private ImageView imageViewForMensaMenu;
@@ -40,8 +43,8 @@ public class MensaController implements Initializable{
     
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		imageViewForMensaMenu.fitHeightProperty().bind(labelForMensaMenu.heightProperty());
-		imageViewForMensaMenu.fitWidthProperty().bind(labelForMensaMenu.widthProperty());
+		imageViewForMensaMenu.fitHeightProperty().bind(labelForImageResizing.heightProperty());
+		imageViewForMensaMenu.fitWidthProperty().bind(labelForImageResizing.widthProperty());
 		
 		imageViewForMensaBackground.fitHeightProperty().bind(gridPaneForMensa.heightProperty());
 		imageViewForMensaBackground.fitWidthProperty().bind(gridPaneForMensa.widthProperty());

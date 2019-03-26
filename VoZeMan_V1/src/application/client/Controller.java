@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import application.helper.DefaultDataLoader;
+import application.helper.ResizeHelper;
 import application.menu.MenuController;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -76,8 +77,8 @@ public class Controller implements Initializable{
 		EventHandler<MouseEvent> mouseDragged = new EventHandler<MouseEvent>() {
 	        @Override
 	        public void handle(MouseEvent event) {
-	        	if(primaryStage.isMaximized()) {
-	        		primaryStage.setMaximized(false);
+	        	if(ResizeHelper.isMaximized()) {
+	        		ResizeHelper.changeMaximize(primaryStage);
 	        	}
 	            primaryStage.setX(event.getScreenX() - xOffset);
 	            primaryStage.setY(event.getScreenY() - yOffset);
@@ -89,7 +90,7 @@ public class Controller implements Initializable{
 	        public void handle(MouseEvent mouseEvent) {
 	            if(mouseEvent.getButton().equals(MouseButton.PRIMARY)){
 	                if(mouseEvent.getClickCount() == 2){
-	                    primaryStage.setMaximized(!primaryStage.isMaximized());
+	                	ResizeHelper.changeMaximize(primaryStage);
 	                }
 	            }
 	        }
