@@ -82,6 +82,8 @@ public class Controller implements Initializable{
 	        	}
 	            primaryStage.setX(event.getScreenX() - xOffset);
 	            primaryStage.setY(event.getScreenY() - yOffset);
+	            
+	            ResizeHelper.checkIfDraggedToBorders(primaryStage);
 	        }
 	    };
 		

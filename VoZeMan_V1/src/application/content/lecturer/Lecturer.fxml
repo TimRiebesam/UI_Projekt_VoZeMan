@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -8,22 +9,47 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane minHeight="-Infinity" prefHeight="500.0" prefWidth="500.0" stylesheets="@../../client/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.content.lecturer.LecturererController">
+<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="800.0" styleClass="bg-grey" stylesheets="@../../client/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.content.lecturer.LecturererController">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.0" minWidth="10.0" prefWidth="155.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="345.0" minWidth="10.0" prefWidth="345.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="47.2000072479248" minHeight="10.0" prefHeight="47.2000072479248" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="185.5999927520752" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="300.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="167.0" styleClass="window-lecturer" text="Dozent auswählen:" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
-         <padding>
-            <Insets left="5.0" top="5.0" />
-         </padding>
+      <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="notes-page" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="3">
+         <GridPane.margin>
+            <Insets bottom="40.0" left="-20.0" right="-20.0" top="-20.0" />
+         </GridPane.margin>
       </Label>
-      <ComboBox fx:id="selectLecturerComboBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#eventComboBox" prefHeight="34.0" prefWidth="341.0" styleClass="window-lecturer" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" />
-      <TextArea fx:id="showLecturerTextArea" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="342.0" styleClass="window-lecturer" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="167.0" styleClass="window-lecturer" text="Dozent auswählen:" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" />
+         </GridPane.margin>
+      </Label>
+      <ComboBox fx:id="selectLecturerComboBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#eventComboBox" prefHeight="34.0" prefWidth="341.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="5.0" top="5.0" />
+         </GridPane.margin>
+         <styleClass>
+            <String fx:value="window-lecturer" />
+            <String fx:value="textfield-notes" />
+         </styleClass></ComboBox>
+      <TextArea fx:id="showLecturerTextArea" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="342.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <styleClass>
+            <String fx:value="window-lecturer" />
+            <String fx:value="textarea-notes" />
+         </styleClass>
+         <GridPane.margin>
+            <Insets bottom="50.0" top="5.0" />
+         </GridPane.margin></TextArea>
    </children>
 </GridPane>

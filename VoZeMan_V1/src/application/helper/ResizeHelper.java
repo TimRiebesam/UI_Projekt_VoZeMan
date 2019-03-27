@@ -24,14 +24,50 @@ public class ResizeHelper {
 	private static double stageY;
 	private static double stageWidth;
 	private static double stageHeight;
+	private static double stageMinWidth;
+	private static double stageMinHeight;
 	
 	private static Button maximizeBtn;
+	
+	private static Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
 	
 	private static Button getMaximizeBtn(Stage stage) {
 		if(maximizeBtn == null) {
 			maximizeBtn = (Button)stage.getScene().lookup("#maximizeBtn");
 		}
 		return maximizeBtn;
+	}
+	
+	public static void checkIfDraggedToBorders(Stage stage) {
+		if(stage.getY() <= primaryScreenBounds.getMinY()) {
+			changeMaximize(stage);
+		}
+	}
+	
+	private static void updateWindowSize(Stage stage, boolean rightAlign, int widthDividedBy) {
+		if(rightAlign)
+			stage.setX(primaryScreenBounds.getMinX()+primaryScreenBounds.getWidth()/2);
+		else
+			stage.setX(primaryScreenBounds.getMinX());
+		
+    	stage.setY(primaryScreenBounds.getMinY());
+
+    	stage.setMaxWidth(primaryScreenBounds.getWidth()/widthDividedBy);
+    	stage.setMinWidth(primaryScreenBounds.getWidth()/widthDividedBy);
+
+    	stage.setMaxHeight(primaryScreenBounds.getHeight());
+    	stage.setMinHeight(primaryScreenBounds.getHeight());
+	}
+	
+	private static void resetSize(Stage stage) {
+		stage.setX(stageX);
+    	stage.setY(stageY);
+
+    	stage.setMaxWidth(stageWidth);
+    	stage.setMinWidth(stageMinWidth);
+
+    	stage.setMaxHeight(stageHeight);
+    	stage.setMinHeight(stageMinHeight);
 	}
 	
 	public static void changeMaximize(Stage stage) {
@@ -42,32 +78,19 @@ public class ResizeHelper {
 			stageY = stage.getY();
 			stageWidth = stage.getWidth();
 			stageHeight = stage.getHeight();
+			stageMinWidth = stage.getMinWidth();
+			stageMinHeight = stage.getMinHeight();
 			
-			Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
-	    	stage.setX(primaryScreenBounds.getMinX());
-	    	stage.setY(primaryScreenBounds.getMinY());
-
-	    	stage.setMaxWidth(primaryScreenBounds.getWidth());
-	    	stage.setMinWidth(primaryScreenBounds.getWidth());
-
-	    	stage.setMaxHeight(primaryScreenBounds.getHeight());
-	    	stage.setMinHeight(primaryScreenBounds.getHeight());
+			updateWindowSize(stage, false, 1);
 	    	
 	    	getMaximizeBtn(stage).setGraphic(new FontAwesome().create(FontAwesome.Glyph.COMPRESS).color(Color.WHITE).size(18));
 		}
 		
 		else {
 			isMax = !isMax;
-			
-			stage.setX(stageX);
-	    	stage.setY(stageY);
-
-	    	stage.setMaxWidth(stageWidth);
-	    	stage.setMinWidth(stageWidth);
-
-	    	stage.setMaxHeight(stageHeight);
-	    	stage.setMinHeight(stageHeight);
 	    	
+			resetSize(stage);
+			
 			getMaximizeBtn(stage).setGraphic(new FontAwesome().create(FontAwesome.Glyph.EXPAND).color(Color.WHITE).size(18));
 		}
 	}
