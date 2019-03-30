@@ -147,7 +147,15 @@
 	-fx-font-family: "Century Gothic";
 }
 
-.textarea-lecturer {
+.lecturer-name {
+	-fx-font-size: 18pt;
+}
+
+.lecturer-lecture {
 	-fx-font-size: 12pt;
-	-fx-font-family: "Century Gothic";
+	-fx-color: #2b2f32;
+}
+
+.lecturer-default-text {
+	-fx-font-size: 12pt;
 }
