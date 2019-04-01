@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -32,23 +33,19 @@ public class SettingsController implements Initializable {
     
 
     @FXML
-    private Label moodleLinkSettingsLabel;
+    private Label moodleSignInLabel;
+
     @FXML
-    private TextField enterMoodleLinkSettingsTextfield;
+    private TextField enterMoodleUserTextfield;
+
     @FXML
-    private Button saveMoodleLinkSettingButton;
+    private PasswordField enterMoodlePasswordPasswordfield;
+
     @FXML
-    private Label savedMoodleLinkLabel;
+    private Button signInMoodleButton;
     
-    
     @FXML
-    private Label dualisLinkSettingsLabel;
-    @FXML
-    private TextField enterDualisLinkSettingsTextfield;
-    @FXML
-    private Button saveDualisLinkSettingsButton;
-    @FXML
-    private Label savedDualisLinkLabel;
+    private Label settingsWindowNiceLabel;
     
     
 	Settings settings = ModelHandler.getSettings();
@@ -69,43 +66,47 @@ public class SettingsController implements Initializable {
 	//Methode um dem SpeichernButton den Icon hinzuzufuegen
 	private void setGraphicForSaveButton() {
 		saveRaplaLinkSettingButton.setGraphic(new FontAwesome().create(FontAwesome.Glyph.SAVE).color(Color.WHITE).size(23));
-		saveMoodleLinkSettingButton.setGraphic(new FontAwesome().create(FontAwesome.Glyph.SAVE).color(Color.WHITE).size(23));
-		saveDualisLinkSettingsButton.setGraphic(new FontAwesome().create(FontAwesome.Glyph.SAVE).color(Color.WHITE).size(23));
+		
 	}
 	//Methode um die saveLabels unsichtbar zu mache
 	private void setSaveLabelbsUnvisible() {
 		savedRaplaLinkLabel.setVisible(false);
-		savedMoodleLinkLabel.setVisible(false);
-		savedDualisLinkLabel.setVisible(false);
+		
 	}
 	
 	
 	//Methode um RaplaLink zu speichern
 	@FXML
 	void saveRaplaLink(ActionEvent event) {
-		settings.setRaplaUrl(enterRaplaLinkSettingsTextfield.getText());
-		enterRaplaLinkSettingsTextfield.setText("");
-		savedRaplaLinkLabel.setVisible(true);
-	}
+		if (!enterRaplaLinkSettingsTextfield.getText().equals("")) {
+			settings.setRaplaUrl(enterRaplaLinkSettingsTextfield.getText());
+			enterRaplaLinkSettingsTextfield.setText("");
+			savedRaplaLinkLabel.setVisible(true);
+			saveRaplaLinkSettingButton.setVisible(false);
+		}
+		else {
+			//ToDo Neues Label/Textfeld erstellen
+			enterRaplaLinkSettingsTextfield.setText("Bitte URL eintragen");
+		}
 	
-	//methode um moodle-Link zu speichern
-	@FXML
-	void saveMoodleLink(ActionEvent event) {
-		settings.setMoodleUrl(enterMoodleLinkSettingsTextfield.getText());
-		enterMoodleLinkSettingsTextfield.setText("");
-		savedMoodleLinkLabel.setVisible(true);
+		
 
 	}
 	
-	//Methode um Dualis Link zu speichern
+	//Mehthode um die Anmeldung durchzuführen
 	@FXML
-	void saveDualisLink(ActionEvent event) {
-		settings.setDualisUrl(enterDualisLinkSettingsTextfield.getText());		
-		enterDualisLinkSettingsTextfield.setText("");
-		savedDualisLinkLabel.setVisible(true);
-
+	void signInMoodle (ActionEvent event) {
+		
+		if (!enterMoodleUserTextfield.getText().equals("") || !enterMoodlePasswordPasswordfield.getText().equals("")) {
+			settings.setUsernameForMoodleAndDualis(enterMoodleUserTextfield.getText());
+			settings.setPasswordForMoodleAndDualis(enterMoodlePasswordPasswordfield.getText());
+		}
+		else {
+			//ToDo Neues Label/TF mit Hinweis anlegen und dann hier sichtbar machen
+		}
+		
+		
 	}
-	
 	
 	
 	
