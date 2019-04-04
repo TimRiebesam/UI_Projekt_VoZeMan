@@ -1,0 +1,19 @@
+Voraussetzungen
+- Eclipse IDE (getestet mit IDE for Enterprise Java Developers current Version 04.04.2019)
+- Java JDK (getestet mit JDK8)
+
+Projekt einbinden
+- Eclipse starten
+- File -> Import Project from File System
+- Directory klicken
+- Zu Projektordner navigieren und "Ordner öffnen" wählen
+- Finish klicken
+
+Projekt lauffähig machen
+- Rechtsklick auf Projektnamen (Project Explorer in Eclipse)
+- Maven -> Update Project -> OK
+- Warten bis alle Dependencys geladen wurden und keine Fehler mehr in Projekt angezeigt werden
+
+Projekt starten
+- Navigiere nach VoZwMan_V1 -> src -> application.client -> Main.java
+- Run und genießen
